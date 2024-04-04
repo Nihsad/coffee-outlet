@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User, Review, CoffeeShop } = require('../models');
+const { User, Feedback, CoffeeShop } = require('../models');
 // const withAuth = require('../utils/auth');
 
-// GET all reviews for homepage
+// GET all Feedbacks for homepage
 router.get('/', async (req, res) => {
   try {
-    const reviewData = await Review.findAll({
+    const FeedbackData = await Feedback.findAll({
       include: [
         {
           model: User,
@@ -18,10 +18,10 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const reviews = reviewData.map((review) => review.get({ plain: true }));
+    const Feedbacks = FeedbackData.map((Feedback) => Feedback.get({ plain: true }));
 
     res.render('homepage', {
-      reviews,
+      Feedbacks,
       // logged_in: req.session.logged_in,
     });
   } catch (err) {
