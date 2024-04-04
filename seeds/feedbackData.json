@@ -1,0 +1,62 @@
+[
+    {
+        "description": "Great coffee and atmosphere!",
+        "user_id": 1,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 1
+    },
+    {
+        "description": "Friendly staff and delicious pastries.",
+        "user_id": 2,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 2
+    },
+    {
+        "description": "Best coffee in town!",
+        "user_id": 3,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 3
+    },
+    {
+        "description": "Cozy place to work and sip coffee.",
+        "user_id": 1,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 4
+    },
+    {
+        "description": "The espresso here is amazing!",
+        "user_id": 2,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 5
+    },
+    {
+        "description": "Love the latte art!",
+        "user_id": 3,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 6
+    },
+    {
+        "description": "Excellent service and tasty coffee.",
+        "user_id": 1,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 7
+    },
+    {
+        "description": "Relaxing ambiance and top-notch coffee.",
+        "user_id": 2,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 8
+    },
+    {
+        "description": "A hidden gem for coffee enthusiasts.",
+        "user_id": 3,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 9
+    },
+    {
+        "description": "Great spot for meetings over coffee.",
+        "user_id": 1,
+        "created_on": "2024-03-31",
+        "coffee_shop_id": 10
+    }
+]
