@@ -19,6 +19,18 @@ CoffeeShop.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        address: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        phone_number: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         created_on: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -28,7 +40,7 @@ CoffeeShop.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isIn: [['$', '$$', '$$$']] // only allow these values
+                isIn: [['$', '$$', '$$$', "∅"]] // only allow these values
             }
         },
     },
