@@ -5,30 +5,35 @@ const withAuth = require('../utils/auth');
 // GET all Feedbacks for homepage
 router.get('/', async (req, res, next) => {
   try {
-    const FeedbackData = await Feedback.findAll({
+    const coffeeShopData = await CoffeeShop.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
         {
-          model: CoffeeShop,
-          attributes: ['name'],
+          model: Feedback,
+          attributes: ['description', 'date_created', 'user_id', 'coffee_shop_id'],
+          include: {
+            model: User,
+            attributes: ['username'],
+          }
         },
       ],
     });
 
     // Define the `Feedbacks` variable here
-    const Feedbacks = FeedbackData.map((Feedback) => Feedback.get({ plain: true }));
+    const coffeeshops = coffeeShopData.map((coffeeshop) => coffeeshop.get({ plain: true }));
 
     // Render the homepage with Feedbacks
     res.render('homepage', {
-      Feedbacks,
+      coffeeshops,
       // logged_in: req.session.logged_in,
     });
   } catch (err) {
     // Handle the error
-    next(err);
+    res.status(500).json(err);
+    // next(err);
   }
 });
 
