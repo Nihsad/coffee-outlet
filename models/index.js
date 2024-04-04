@@ -1,25 +1,25 @@
 const User = require('./User');
 const CoffeeShop = require('./CoffeeShop');
-const Review = require('./Review');
+const Feedback = require('./Feedback');
 
-User.hasMany(Review, {
+User.hasMany(Feedback, {
     foreignKey: 'user_id',
-    // Set to CASCADE so that when a User is deleted, all associated Reviews are deleted as well
+    // Set to CASCADE so that when a User is deleted, all associated Feedbacks are deleted as well
     onDelete: 'CASCADE'
 });
 
-Review.belongsTo(User, {
+Feedback.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-CoffeeShop.hasMany(Review, {
+CoffeeShop.hasMany(Feedback, {
     foreignKey: 'coffee_shop_id',
-    // Set to CASCADE so that when a CoffeeShop is deleted, all associated Reviews are deleted as well
+    // Set to CASCADE so that when a CoffeeShop is deleted, all associated Feedbacks are deleted as well
     onDelete: 'CASCADE'
 });
 
-Review.belongsTo(CoffeeShop, {
+Feedback.belongsTo(CoffeeShop, {
     foreignKey: 'coffee_shop_id'
 });
 
-module.exports = { User, CoffeeShop, Review };
+module.exports = { User, CoffeeShop, Feedback };

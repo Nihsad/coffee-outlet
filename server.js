@@ -10,7 +10,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 //Take out this line once the seed data is loaded
-const { User, CoffeeShop, Review } = require('./models');
+const { User, CoffeeShop, Feedback } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
