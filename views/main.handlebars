@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Outlet</title>
+    <link rel="stylesheet" href="/css/resetStyles.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between">
+      
+      <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <!-- Conditionally render login or logout links -->
+        {{#if loggedIn}}
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/profile">Dashboard</a>
+        <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/">Coffee Shops</a>
+        <a class="nav-link" href="/login">Login</a>
+        {{/if}}
+        
+      </nav>
+
+    </header>
+    <main class="container container-fluid mt-5 pt-5">
+      <div class="home mb-4">
+          <h1>
+            <a href="/">Coffee Outlet <i class="fas fa-coffee"></i></a>
+          </h1>
+        </div>
+      <!-- Render the sub layout -->
+      {{{ body }}}
+      
+    </main>
+    
+    <footer>
+      <h3>&copy; 2024 Coffee Outlet. All rights Reserved</h2>
+      <a href="https://github.com/Nihsad/coffee-outlet" target="_blank"><i class="fab fa-github"></i></a>
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{else}}
+  <script src="/js/login.js"></script>
+  {{/if}}
+</body>
+
+</html>
