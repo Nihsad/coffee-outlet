@@ -15,10 +15,6 @@ Feedback.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        seating_availability: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         created_on: {
             type: DataTypes.DATE,
             allowNull: false,
