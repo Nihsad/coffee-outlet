@@ -1,0 +1,92 @@
+[
+    {
+        "username": "john_doe",
+        "password": "password123",
+        "email": "john@example.com",
+        "created_on": "2024-03-31T12:00:00Z"
+    },
+    {
+        "username": "jane_smith",
+        "password": "securepass456",
+        "email": "jane@example.com",
+        "created_on": "2024-03-31T13:30:00Z"
+    },
+    {
+        "username": "samuel_jackson",
+        "password": "strongpassword789",
+        "email": "samuel@example.com",
+        "created_on": "2024-03-31T15:00:00Z"
+    },
+    {
+        "username": "lisa_carter",
+        "password": "password123",
+        "email": "lisa@example.com",
+        "created_on": "2024-03-31T16:30:00Z"
+    },
+    {
+        "username": "michael_brown",
+        "password": "securepass456",
+        "email": "michael@example.com",
+        "created_on": "2024-03-31T18:00:00Z"
+    },
+    {
+        "username": "emily_white",
+        "password": "strongpassword789",
+        "email": "emily@example.com",
+        "created_on": "2024-03-31T19:30:00Z"
+    },
+    {
+        "username": "david_wilson",
+        "password": "password123",
+        "email": "david@example.com",
+        "created_on": "2024-03-31T21:00:00Z"
+    },
+    {
+        "username": "olivia_taylor",
+        "password": "securepass456",
+        "email": "olivia@example.com",
+        "created_on": "2024-03-31T22:30:00Z"
+    },
+    {
+        "username": "ethan_martin",
+        "password": "strongpassword789",
+        "email": "ethan@example.com",
+        "created_on": "2024-04-01T00:00:00Z"
+    },
+    {
+        "username": "sophia_anderson",
+        "password": "password123",
+        "email": "sophia@example.com",
+        "created_on": "2024-04-01T01:30:00Z"
+    },
+    {
+        "username": "noah_thomas",
+        "password": "securepass456",
+        "email": "noah@example.com",
+        "created_on": "2024-04-01T03:00:00Z"
+    },
+    {
+        "username": "mia_rodriguez",
+        "password": "strongpassword789",
+        "email": "mia@example.com",
+        "created_on": "2024-04-01T04:30:00Z"
+    },
+    {
+        "username": "william_garcia",
+        "password": "password123",
+        "email": "william@example.com",
+        "created_on": "2024-04-01T06:00:00Z"
+    },
+    {
+        "username": "ava_martinez",
+        "password": "securepass456",
+        "email": "ava@example.com",
+        "created_on": "2024-04-01T07:30:00Z"
+    },
+    {
+        "username": "james_lopez",
+        "password": "strongpassword789",
+        "email": "james@example.com",
+        "created_on": "2024-04-01T09:00:00Z"
+    }
+]

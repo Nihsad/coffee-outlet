@@ -3,34 +3,35 @@ const { User, Feedback, CoffeeShop } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all Feedbacks for homepage
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
   try {
     const coffeeShopData = await CoffeeShop.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-        {
-          model: Feedback,
-          attributes: ['description', 'date_created', 'user_id', 'coffee_shop_id'],
-          include: {
-            model: User,
-            attributes: ['username'],
-          }
-        },
-      ],
+      // include: [
+        // {
+        //   model: User,
+        //   attributes: ['username'],
+        // },
+        // {
+        //   model: Feedback,
+        //   attributes: ['description', 'created_on', 'user_id', 'coffee_shop_id'],
+        //   include: {
+        //     model: User,
+        //     attributes: ['username'],
+        //   }
+        // },
+      // ],
     });
-
+    // console.log(coffeeShopData);
     // Define the `Feedbacks` variable here
     const coffeeshops = coffeeShopData.map((coffeeshop) => coffeeshop.get({ plain: true }));
-
+    // console.log(coffeeshops);
     // Render the homepage with Feedbacks
     res.render('homepage', {
       coffeeshops,
-      // logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     // Handle the error
     res.status(500).json(err);
     // next(err);

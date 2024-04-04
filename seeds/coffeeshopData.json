@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Espresso Express",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "-"
+    },
+    {
+        "name": "Mocha Mania",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$$"
+    },
+    {
+        "name": "Caffeine Corner",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$$$"
+    },
+    {
+        "name": "Java Junction",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$"
+    },
+    {
+        "name": "Bean Bliss",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$$"
+    },
+    {
+        "name": "Brew Haven",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$$$"
+    },
+    {
+        "name": "Perk Palace",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$"
+    },
+    {
+        "name": "Roast Retreat",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$$"
+    },
+    {
+        "name": "Cuppa Cafe",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$$$"
+    },
+    {
+        "name": "Brewed Blessing",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$"
+    },
+    {
+        "name": "Grind House",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$"
+    },
+    {
+        "name": "Steamy Bean",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$"
+    },
+    {
+        "name": "Java Haven",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "$"
+    }
+]

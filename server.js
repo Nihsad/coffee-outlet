@@ -9,8 +9,6 @@ const sequelize = require('./config/connection');
 // This expression is requiring the connect-session-sequelize package and storing it in the SequelizeStore variable
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//Take out this line once the seed data is loaded
-const { User, CoffeeShop, Feedback } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
