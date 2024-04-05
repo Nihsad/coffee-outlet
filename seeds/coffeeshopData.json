@@ -2,7 +2,7 @@
     {
         "name": "Arapahoe Community College",
         "address": "5900 S. Santa Fe Dr., Littleton, CO 80120",
-        "phone": "(303) 797-5090",
+        "phone_number": "(303) 797-5090",
         "city": "Littleton",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
@@ -12,6 +12,7 @@
         "address": "180 Garrison St., Lakewood, CO 80226",
         "city": "Lakewood",
         "phone": "(303) 963-3250",
+        "phone_number": "(303) 963-3250",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -20,6 +21,7 @@
         "address": "1400 Illinois St., Golden, CO 80401",
         "city": "Golden",
         "phone": "(303) 273-3698",
+        "phone_number": "(303) 273-3698",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -28,6 +30,7 @@
         "address": "10 W. Fourteenth Ave., Pkwy, Denver 80204",
         "city": "Denver",
         "phone": "(720) 865-1111",
+        "phone_number": "(720) 865-1111",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -36,6 +39,7 @@
         "address": "201 E. Colfax Ave., Denver, CO 80203",
         "city": "Denver",
         "phone": "(303) 866-6900",
+        "phone_number": "(303) 866-6900",
         "picture": "https: //example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -44,6 +48,7 @@
         "address": "3645 W. 112th Ave., Westminster, CO 80031",
         "city": "Westminster",
         "phone": "(303) 404-5504",
+        "phone_number": "(303) 404-5504",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -52,6 +57,7 @@
         "address": "1019 10th Street, Golden, CO 80401",
         "city": "Golden",
         "phone": "(303) 235-5275",
+        "phone_number": "(303) 235-5275",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -60,6 +66,7 @@
         "address": "10200 W. 20th Ave., Lakewood, CO 80215",
         "city": "Lakewood",
         "phone": "(303) 235-5275",
+        "phone_number": "(303) 235-5275",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -68,6 +75,7 @@
         "address": "20105 Mainstreet, Parker, CO 80138",
         "city": "Parker",
         "phone": "(303) 791-7323",
+        "phone_number": "(303) 791-7323",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -76,6 +84,7 @@
         "address": "13300 W. 6th Ave., Lakewood, CO 80228",
         "city": "Lakewood",
         "phone": "(303) 914-6740",
+        "phone_number": "(303) 914-6740",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -84,6 +93,7 @@
         "address": "3333 Regis Blvd., Denver, CO 80221",
         "city": "Denver",
         "phone": "(303) 458-4030",
+        "phone_number": "(303) 458-4030",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -92,6 +102,7 @@
         "address": "12950 E. Montview Blvd, Aurora CO 80045",
         "city": "Denver",
         "phone": "(303) 724-2152",
+        "phone_number": "(303) 724-2152",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -100,6 +111,7 @@
         "address": "2150 E. Evans, Denver, CO 80208",
         "city": "Denver",
         "phone": "(303) 871-3707",
+        "phone_number": "(303) 871-3707",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -108,6 +120,7 @@
         "address": "2255 E. Evans, Denver, CO 80208",
         "city": "Denver",
         "phone": "(303) 871-6188",
+        "phone_number": "(303) 871-6188",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -116,6 +129,7 @@
         "address": "5475 W. 32nd Ave., Wheat Ridge, CO 80212",
         "city": "Wheat Ridge",
         "phone": "(303) 235-5275",
+        "phone_number": "(303) 235-5275",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -124,6 +138,7 @@
         "address": "1201 Center Ave., Ft. Collins, Colorado 80523",
         "city": "Ft. Collins",
         "phone": "(970) 491-1841",
+        "phone_number": "(970) 491-1841",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -132,6 +147,7 @@
         "address": "1720 Pleasant St., Boulder, CO  80309",
         "city": "Boulder",
         "phone": "(303) 492-8705",
+        "phone_number": "(303) 492-8705",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -140,6 +156,7 @@
         "address": "2450 Kittredge Loop Dr., Boulder, CO 80309",
         "city": "Boulder",
         "phone": "(303) 492-7534",
+        "phone_number": "(303) 492-7534",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -148,6 +165,7 @@
         "address": "1420 Austin Bluffs Pkwy, Colorado Springs, CO 80918",
         "city": "Colorado Springs",
         "phone": "(719) 255-3295",
+        "phone_number": "(719) 255-3295",
         "picture": "https://example.com/default-coffee-image.jpg",
         "price_range": "∅"
     },
@@ -235,6 +253,8 @@
         "city": "",
         "phone": "",
         "picture": "https://example.com/default-coffee-image.jpg",
-        "price_range": "$$$$"
+        "price_range": "$$$$""phone_number": "(719) 389- 6658",
+        "picture": "https://example.com/default-coffee-image.jpg",
+        "price_range": "Free"
     }
 ]

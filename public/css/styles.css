@@ -1,0 +1,100 @@
+/* --------- NAVBAR ---------*/
+.navbar {
+    background: #753742;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 25px;
+    transition: .3s;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 15px;
+    display: inline-block;
+  
+  }
+  
+  .navbar a:hover{
+      color: #D8D78F;
+  }
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+
+
+.mainbg {
+    /* background-image: url("/assets/bgmain.jpg"); */
+    background-color: #D8BD8A;
+    /* background-size: cover; */
+    /* position: absolute; */
+}
+
+/* --------- Cards Homepage ---------*/
+.box {
+    background-color: steelblue;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+  
+.box.show {
+    transform: translateX(0);
+}
+
+.box h2 {
+    font-size: 45px;
+}
+
+.box a {
+    color: #fff;
+    font-weight: 500;
+}
+
+.box a:hover {
+    transform: scale(3);
+    text-decoration: none;
+}
+
+
+/* --------- FOOTER ---------*/
+/* set icon color to red */
+.fa-github {
+    color: black;
+}
+
+/* format for footer */
+footer {
+    /* padding: 30px; */
+    /* clear: both; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* height: 2.5rem;  */
+    background-color: #753742 !important;
+    padding: 10px;
+    color: #fff;
+}
+
+/* format for the h3 inside the footer*/
+footer h3 {
+    font-size: 20px;
+}
+
