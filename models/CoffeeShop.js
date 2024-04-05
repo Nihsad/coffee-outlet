@@ -40,7 +40,7 @@ CoffeeShop.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isIn: [['$', '$$', '$$$', "∅"]] // only allow these values
+                isIn: [['$', '$$', '$$$', "Free"]] // only allow these values
             }
         },
     },
