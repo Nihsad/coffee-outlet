@@ -149,7 +149,7 @@
         "city": "Colorado Springs",
         "phone": "(719) 255-3295",
         "picture": "https://example.com/default-coffee-image.jpg",
-        "price_range": "Free"
+        "price_range": "∅"
     },
     {
         "name": "Colorado College, Colorado College Tutt Library",
