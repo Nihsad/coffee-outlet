@@ -2,11 +2,37 @@ const router = require('express').Router();
 const { CoffeeShop } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// This route is for getting all coffee shops - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
-router.get('/', async (req, res) => {
+// // This route is for getting all coffee shops - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
+// router.get('/', async (req, res) => {
+//     try {
+//         const coffeeShopData = await CoffeeShop.findAll();
+//         res.status(200).json(coffeeShopData);
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+// This route is for getting the coffeeshops of a specific city 
+// endpoint: /localhost:3001/api/coffeeshops/city/:city
+router.get('/city/:city', async (req, res) => {
     try {
-        const coffeeShopData = await CoffeeShop.findAll();
-        res.status(200).json(coffeeShopData);
+        const coffeeShopData = await CoffeeShop.findAll({
+            where: {
+                city: req.params.city,
+            },
+        });
+
+        if (!coffeeShopData) {
+            res.status(404).json({ message: 'No coffee shops found in this city!' });
+            return;
+        }
+        const coffeeShops = coffeeShopData.map((coffeeShop) => coffeeShop.get({ plain: true }));
+        // res.status(200).json(coffeeShopData);
+        console.log(coffeeShops);
+        res.render('city', {
+            coffeeShops,
+            logged_in: req.session.logged_in,
+        });
     } catch (err) {
         res.status(500).json(err);
     }

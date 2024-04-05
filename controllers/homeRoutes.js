@@ -38,6 +38,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 //Login route
 router.get('/login', (req, res, next) => {
   if (req.session.logged_in) {
