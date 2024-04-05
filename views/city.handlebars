@@ -1,11 +1,8 @@
-{{#each coffeeShops as |coffeeShop|}}
+{{#each coffeeshops as |coffeeshop|}}
   <div class="coffee-shop">
-    <h2>{{coffeeShop.name}}</h2>
-    <p>{{coffeeShop.address}}</p>
-    <p>{{coffeeShop.phone_number}}</p>
-    <p>{{coffeeShop.price_range}}</p>
+    <h2>{{coffeeshop.name}}</h2>
+    <p>{{coffeeshop.address}}</p>
+    <p>{{coffeeshop.phone_number}}</p>
+    <p>Pricing: {{coffeeshop.price_range}}</p>
   </div>
 {{/each}}
-
-<h2>{{name}}</h2>
-<h2>TEST!</h2>

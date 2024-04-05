@@ -16,23 +16,21 @@ const withAuth = require('../../utils/auth');
 // endpoint: /localhost:3001/api/coffeeshops/city/:city
 router.get('/city/:city', async (req, res) => {
     try {
-        const coffeeShopData = await CoffeeShop.findAll({
+        const coffeeshops = await CoffeeShop.findAll({
             where: {
                 city: req.params.city,
             },
         });
-
-        if (!coffeeShopData) {
-            res.status(404).json({ message: 'No coffee shops found in this city!' });
-            return;
-        }
-        const coffeeShops = coffeeShopData.map((coffeeShop) => coffeeShop.get({ plain: true }));
+        console.log(coffeeshops);
+        const coffeeShopPlain = coffeeshops.map(coffeeshop => coffeeshop.toJSON());
+        // const coffeeShops = coffeeShopData.map((coffeeShop) => coffeeShop.get({ plain: true }));
         // res.status(200).json(coffeeShopData);
-        console.log(coffeeShops);
+        console.log(coffeeShopPlain);
         res.render('city', {
-            coffeeShops,
-            logged_in: req.session.logged_in,
+            coffeeshops: coffeeShopPlain,
+            // logged_in: req.session.logged_in,
         });
+        // console.log(...coffeeshops)
     } catch (err) {
         res.status(500).json(err);
     }
