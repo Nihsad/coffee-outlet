@@ -37,7 +37,7 @@ router.get('/city/:city', async (req, res) => {
 });
 
 // This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
-router.post('/', withAuth, async (req, res) => {
+router.post('/addCoffeeshop', withAuth, async (req, res) => {
     try {
         const newCoffeeShop = await CoffeeShop.create({
             ...req.body,
