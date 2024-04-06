@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
+        console.log(userData);
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.loggedIn = true;
@@ -33,11 +34,11 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 // This route is for logging in a user - endpoint: /localhost:3001/api/users/login --TESTED CHECK!
-router.post('/login', async (req, res) => {
+router.post('/login', withAuth, async (req, res) => {
     try {
       const userData = await User.findOne({ 
         where: { 
-          username: req.body.username 
+          email: req.body.email 
         } 
       });
       console.log(userData);
@@ -61,6 +62,7 @@ router.post('/login', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.loggedIn = true;
         
+        // res.redirect('/addCoffeeshop');
         res.json({ user: userData, message: 'You are now logged in!' });
       });
   

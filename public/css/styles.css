@@ -71,6 +71,11 @@
     text-decoration: none;
 }
 
+.addCoffee a{
+    display: block;
+    text-align: center;
+}
+
 
 /* --------- FOOTER ---------*/
 /* set icon color to red */
@@ -85,7 +90,7 @@ footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     position: absolute;
-    bottom: 0;
+    /* bottom: 0; */
     width: 100%;
     /* height: 2.5rem;  */
     background-color: #753742 !important;

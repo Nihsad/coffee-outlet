@@ -1,11 +1,13 @@
-{{#each coffeeShops as |coffeeShop|}}
+{{#each coffeeshops as |coffeeshop|}}
   <div class="coffee-shop">
-    <h2>{{coffeeShop.name}}</h2>
-    <p>{{coffeeShop.address}}</p>
-    <p>{{coffeeShop.phone_number}}</p>
-    <p>{{coffeeShop.price_range}}</p>
+    <h2>{{coffeeshop.name}}</h2>
+    <p>{{coffeeshop.address}}</p>
+    <p>{{coffeeshop.phone_number}}</p>
+    <p>Pricing: {{coffeeshop.price_range}}</p>
   </div>
-{{/each}}
 
-<h2>{{name}}</h2>
-<h2>TEST!</h2>
+{{/each}}
+  <div class="addCoffee">
+    <a href="/login"><i class="fas fa-plus mb-3 mt-3"></i> Add CoffeeShop</a>
+    <a href="/" class="mb-5 h6">Back to cities</a>
+  </div>

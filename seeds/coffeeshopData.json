@@ -220,7 +220,7 @@
     {
         "name": "Starbucks",
         "picture": "https://example.com/default-coffee-image.jpg",
-        "address": "",
+        "address": "some address",
         "phone_number": "",
         "city": "",
         "price_range": "$$$"
@@ -228,9 +228,9 @@
     {
         "name": "Starbucks",
         "picture": "https://example.com/default-coffee-image.jpg",
-        "address": "",
+        "address": "some address",
         "phone_number": "(719) 389- 6658",
-        "city": "denver",
+        "city": "Denver",
         "price_range": "$$$"
     }
 ]
