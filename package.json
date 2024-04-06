@@ -20,7 +20,9 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "pg": "^8.11.3",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "nodemailer": "^6.4.17",
+    "smtp-server": "3.13.3"
   },
   "devDependencies": {
     "eslint": "^7.12.1",

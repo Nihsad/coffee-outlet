@@ -13,10 +13,21 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-        document.location.replace('/profile');
-        } else {
-        alert(response.statusText);
-        }
+            const emailResponse = await fetch('/send-signup-email', {
+                method: 'POST',
+                body: JSON.stringify({ email }),
+                headers: { 'Content-Type': 'application/json' },
+                });
+                if (emailResponse.ok) {
+                    console.log('Email sent successfully');
+                  } else {
+                    console.error('Error sending email');
+                  }
+            
+                  document.location.replace('/profile');
+                } else {
+                  alert(response.statusText);
+                }
     }
 };
   

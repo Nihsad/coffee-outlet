@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Feedback, CoffeeShop } = require('../models');
+const { sendSignUpEmail } = require('../public/js/sendMail');
 const withAuth = require('../utils/auth');
 
 // GET all Feedbacks for homepage
@@ -28,7 +29,7 @@ router.get('/', async (req, res) => {
     // Render the homepage with Feedbacks
     res.render('homepage', {
       coffeeshops,
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -52,14 +53,31 @@ router.get('/login', (req, res, next) => {
 
 //Signup/registration route
 router.get('/signup', (req, res, next) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
   next();
-}, (req, res) => {
-  res.render('signup');
+}, async (req, res) => {
+  try {
+    res.render('signup');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Something went wrong');
+  }
 });
+
+router.post('/send-signup-email', async (req, res) => {
+  const { email } = req.body;
+  try {
+    await sendSignUpEmail(email);
+    res.json({ message: 'Email sent successfully' });
+  } catch (err) {
+    console.error('Error sending signup email:', err);
+    res.status(500).json({ message: 'Error sending email' });
+  }
+});
+
 
 // Error handling middleware
 router.use((err, req, res, next) => {
