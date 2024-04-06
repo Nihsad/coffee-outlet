@@ -24,7 +24,7 @@ const signupFormHandler = async (event) => {
                     console.error('Error sending email');
                   }
             
-                  document.location.replace('/profile');
+                  document.location.replace('/');
                 } else {
                   alert(response.statusText);
                 }
