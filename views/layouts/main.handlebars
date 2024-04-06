@@ -17,10 +17,10 @@
 </head>
 
 <body>
-  <div class="mainbg flex-column justify-space-around page-container">
+  <div class="flex-column justify-space-around page-container">
     <header class="display-flex justify-space-between">
       
-      <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark  fixed-top bg-dark">
         <!-- Conditionally render login or logout links -->
         {{#if loggedIn}}
         <a class="nav-link" href="/">Home</a>
@@ -29,24 +29,20 @@
         {{else}}
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/login">Coffee Shops</a>
-        <a class="nav-link" href="/login">Login</a>
+        {{!-- <a class="nav-link" href="/login">Login</a> --}}
         {{/if}}
         
       </nav>
 
     </header>
     <main class="container container-fluid mt-5 pt-5">
-        <div class=" mb-4">
-          <h1>
-            <a href="/">Coffee Outlet <i class="fas fa-coffee"></i></a>
-          </h1>
-        </div>
+        
       <!-- Render the sub layout -->
       {{{ body }}}
       
     </main>
     
-    <footer>
+    <footer class="bg-dark">
       <h3>&copy; 2024 Coffee Outlet. All rights Reserved</h2>
       <a href="https://github.com/Nihsad/coffee-outlet" target="_blank"><i class="fab fa-github"></i></a>
     </footer>
