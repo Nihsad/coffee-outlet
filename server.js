@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const dotenv = require('dotenv').config();
 
 const sequelize = require('./config/connection');
 // This expression is requiring the connect-session-sequelize package and storing it in the SequelizeStore variable

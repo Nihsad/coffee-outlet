@@ -1,10 +1,10 @@
 [
     {
         "name": "Arapahoe Community College",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://upload.wikimedia.org/wikipedia/commons/b/b5/ArapahoeCommunityCollege.JPG",
         "address": "5900 S. Santa Fe Dr., Littleton, CO 80120",
         "phone_number": "(303) 797-5090",
-        "city": "Littleton",
+        "city": "Denver",
         "price_range": "∅"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
         "name": "Denver Public Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://upload.wikimedia.org/wikipedia/commons/b/b5/ArapahoeCommunityCollege.JPG",
         "address": "10 W. Fourteenth Ave., Pkwy, Denver 80204",
         "phone_number": "(720) 865-1111",
         "city": "Denver",

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { CoffeeShop } = require('../../models');
+const { CoffeeShop, Feedback, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // // This route is for getting all coffee shops - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
@@ -88,6 +88,42 @@ router.delete('/:id', withAuth, async (req, res) => {
 
         res.status(200).json(deletedCoffeeShop);
     } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//get a specific coffee shop
+router.get('/:id', async (req, res) => {
+    console.log('ID!!!', req.params.id);
+    try {
+        const coffeeShopData = await CoffeeShop.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Feedback,
+                    attributes: ['description', 'created_on', 'user_id', 'coffee_shop_id'],
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    }
+                },
+            ],
+        });
+
+        if (!coffeeShopData) {
+            res.status(404).json({ message: 'No coffee shop found with this id!' });
+            return;
+        }
+        console.log(coffeeShopData);
+        const coffeeShop = coffeeShopData.get({ plain: true });
+        console.log(coffeeShop);
+        res.render('coffeeshop', { 
+            ...coffeeShop, 
+            // loggedIn: req.session.loggedIn 
+        });
+        console.log(coffeeShop);
+        // res.status(200).json(coffeeShopData);
+    } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });

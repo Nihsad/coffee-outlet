@@ -1,6 +1,6 @@
 {{#each coffeeshops as |coffeeshop|}}
   <div class="coffee-shop">
-    <h2>{{coffeeshop.name}}</h2>
+    <h2><a href="/api/coffeeshops/{{coffeeshop.id}}">{{coffeeshop.name}}</a></h2>
     <p>{{coffeeshop.address}}</p>
     <p>{{coffeeshop.phone_number}}</p>
     <p>Pricing: {{coffeeshop.price_range}}</p>

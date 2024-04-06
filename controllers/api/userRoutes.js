@@ -4,15 +4,17 @@ const withAuth = require('../../utils/auth');
 
 // This route is for creating a new user - endpoint: /localhost:3001/api/users  --TESTED CHECK!
 router.post('/', async (req, res) => {
-    try {
+  console.log('Request body: ', req.body);  
+  try {
         const userData = await User.create(req.body);
-        console.log(userData);
+        console.log('UserData: ', userData);
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.loggedIn = true;
             res.status(200).json(userData);
         });
     } catch (err) {
+      console.log(err);
         res.status(400).json(err);
     }
 });
