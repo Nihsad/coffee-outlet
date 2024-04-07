@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-
+// BUSCAR FUNCIONALIDAD!!
 router.get('/city', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
