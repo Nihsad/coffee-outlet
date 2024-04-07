@@ -16,13 +16,18 @@ const transporter = nodemailer.createTransport({
 // Function to send welcome email
 const sendSignUpEmail = async (email) => {
     const mailOptions = {
-        from: {
-            name :'Coffee-Outlet ☕',
-            address: process.env.EMAIL
-        },
-        to: email,
-        subject: 'Welcome to Coffe-Outlet App!',
-        text: 'Thank you for signing up, We are so excited You are here!'
+      from: {
+      name :'Coffee Outlet ☕',
+      address: process.env.EMAIL
+      },
+      to: email,
+      subject: 'Welcome to Coffee Outlet!🎉',
+      text: 'Thank you for signing up..',
+      html: `<h2>We are so excited you are here!</h2>
+      <p>Inside the app you can find coffee shops in your area that are work-friendly.
+      You can also <a href="#">earn points</a> towards your favorite cup by adding new shops or giving feedback!</p><br>
+      <strong>Happy Coffee-ing! ☕</strong><br>
+      <span>~Coffee Outlet Team~</span><br>`
     };
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
