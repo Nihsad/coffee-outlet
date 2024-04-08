@@ -1,31 +1,61 @@
-<form id="coffeeShopForm">
-  <div class="form-group">
-    <label for="coffeeShopName">Coffee Shop Name:</label>
+<form id="coffeeShopForm" class="row g-3 needs-validation" novalidate>
+  <div class="form-group col-md-6">
+    <label for="coffeeShopName" class="form-label">Coffee Shop Name:</label>
     <input class="form-control" type="text" id="coffeeShopName" placeholder="Coffee Shop Name:" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
   </div>
-  <div class="form-group">
-    <label for="coffeeShopAddress">Coffee Shop Address:</label>
+  <div class="form-group col-md-6">
+    <label for="coffeeShopAddress" class="form-label">Coffee Shop Address:</label>
     <input class="form-control" type="text" id="coffeeShopAddress" placeholder="Coffee Shop Address:" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
   </div>
-  <div class="form-group">
-    <label for="coffeeShopPicture">Picture file</label>
+  <div class="form-group col-md-6">
+    <label for="coffeeShopPicture" class="form-label">Picture file</label>
     <input type="file" class="form-control-file" id="coffeeShopPicture" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
   </div>
-  <div class="form-group">
-    <label for="coffeeShopPriceRange">Price Range:</label>
-    <select class="form-control" id="coffeeShopPriceRange">
+  <div class="form-group col-md-6">
+    <label for="coffeeShopPriceRange" class="form-label">Price Range:</label>
+    <select class="form-select" id="coffeeShopPriceRange" required>
+      <option selected disabled value="">Choose...</option>
       <option>$</option>
       <option>$$</option>
       <option>$$$</option>
       <option>$$$$</option>
+      <div class="invalid-feedback">
+        Please select a valid price range.
+      </div>
     </select>
   </div>
-  <div class="form-group">
+  <div class="form-group col-12">
     <label for="coffeeShopDescription">Description</label>
     <textarea class="form-control" id="coffeeShopDescription" rows="3" required></textarea>
+    <div class="invalid-feedback">
+        Please you MUST provide a description.
+    </div>
   </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
     <button type="submit" class="btn btn-primary">Add Coffee Shop</button>
+  </div>
 </form>
 
 {{!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+
 <script src="/js/alert.js"></script>
