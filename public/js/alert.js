@@ -1,15 +1,29 @@
-document.getElementById('coffeeShopForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the form from submitting normally
-  
-    // Your SweetAlert2 code here
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Your form has been submitted! Our team will review it shortly.',
-      showConfirmButton: false,
-      timer: 2000
-    });
-  
-    // If you want to submit the form via JavaScript after the alert, you can do so here
-    // e.target.submit();
-  });
+'use strict'
+
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.needs-validation')
+
+// Loop over them and prevent submission
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+    } else {
+      // If the form is valid, show the alert
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Thank you for your submission.',
+        text: 'Our team will review it shortly.',
+        showConfirmButton: true,
+        timer: 3000
+      });
+
+      event.preventDefault(); // Prevent the form from submitting normally
+      form.reset(); // Clear the form
+    }
+
+    form.classList.add('was-validated')
+  }, false)
+})

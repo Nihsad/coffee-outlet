@@ -105,6 +105,7 @@ router.get('/:id', async (req, res) => {
             return;
         }
         const coffeeShop = coffeeShopData.get({ plain: true });
+        console.log(coffeeShop);
         res.render('coffeeshop', { 
             ...coffeeShop, 
             loggedIn: req.session.loggedIn 
