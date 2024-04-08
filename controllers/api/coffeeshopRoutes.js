@@ -2,18 +2,6 @@ const router = require('express').Router();
 const { CoffeeShop, Feedback, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// // This route is for getting all coffee shops - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
-// router.get('/', async (req, res) => {
-//     try {
-//         const coffeeShopData = await CoffeeShop.findAll();
-//         res.status(200).json(coffeeShopData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// This route is for getting the coffeeshops of a specific city 
-// endpoint: /localhost:3001/api/coffeeshops/city/:city
 router.get('/city/:city', async (req, res) => {
     try {
         const coffeeshops = await CoffeeShop.findAll({
@@ -21,16 +9,11 @@ router.get('/city/:city', async (req, res) => {
                 city: req.params.city,
             },
         });
-        console.log(coffeeshops);
         const coffeeShopPlain = coffeeshops.map(coffeeshop => coffeeshop.toJSON());
-        // const coffeeShops = coffeeShopData.map((coffeeShop) => coffeeShop.get({ plain: true }));
-        // res.status(200).json(coffeeShopData);
-        console.log(coffeeShopPlain);
         res.render('city', {
             coffeeshops: coffeeShopPlain,
-            // logged_in: req.session.logged_in,
+            loggedIn: req.session.loggedIn,
         });
-        // console.log(...coffeeshops)
     } catch (err) {
         res.status(500).json(err);
     }
@@ -39,16 +22,25 @@ router.get('/city/:city', async (req, res) => {
 // This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
 router.post('/addCoffeeshop', withAuth, async (req, res) => {
     try {
+        const { name, picture, address, phone_number, city, price_range, latitude, longitude, website, wifi } = req.body;
+
+        // Add validation for required fields
+        if (!name || !picture || !address || !phone_number || !city || !price_range || !latitude || !longitude || !website || !wifi) {
+            res.status(400).json({ message: 'Name, picture, address, phone_number, city, price_range, latitude, longitude, website, wifi are required fields!' });
+            return;
+        }
+
         const newCoffeeShop = await CoffeeShop.create({
             ...req.body,
             user_id: req.session.user_id,
         });
-
         res.status(200).json(newCoffeeShop);
     } catch (err) {
         res.status(400).json(err);
     }
 });
+
+
 
 // This route is for updating a coffee shop - endpoint: /localhost:3001/api/coffeeshops/:id
 // TESTED CHECK!
@@ -94,7 +86,6 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 //get a specific coffee shop
 router.get('/:id', async (req, res) => {
-    console.log('ID!!!', req.params.id);
     try {
         const coffeeShopData = await CoffeeShop.findByPk(req.params.id, {
             include: [
@@ -113,12 +104,10 @@ router.get('/:id', async (req, res) => {
             res.status(404).json({ message: 'No coffee shop found with this id!' });
             return;
         }
-        console.log(coffeeShopData);
         const coffeeShop = coffeeShopData.get({ plain: true });
-        console.log(coffeeShop);
         res.render('coffeeshop', { 
             ...coffeeShop, 
-            // loggedIn: req.session.loggedIn 
+            loggedIn: req.session.loggedIn 
         });
         console.log(coffeeShop);
         // res.status(200).json(coffeeShopData);

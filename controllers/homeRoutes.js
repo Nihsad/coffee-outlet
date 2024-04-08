@@ -5,39 +5,9 @@ const withAuth = require('../utils/auth');
 
 // GET homepage
 router.get('/', async (req, res) => {
-  // try {
-  //   const coffeeShopData = await CoffeeShop.findAll({
-  //     // include: [
-  //       // {
-  //       //   model: User,
-  //       //   attributes: ['username'],
-  //       // },
-  //       // {
-  //       //   model: Feedback,
-  //       //   attributes: ['description', 'created_on', 'user_id', 'coffee_shop_id'],
-  //       //   include: {
-  //       //     model: User,
-  //       //     attributes: ['username'],
-  //       //   }
-  //       // },
-  //     // ],
-  //   });
-  //   // console.log(coffeeShopData);
-  //   // Define the `Feedbacks` variable here
-  //   const coffeeshops = coffeeShopData.map((coffeeshop) => coffeeshop.get({ plain: true }));
-  //   // console.log(coffeeshops);
-  //   // Render the homepage with Feedbacks
-  //   res.render('homepage', {
-  //     coffeeshops,
-  //     // loggedIn: req.session.loggedIn,
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  //   // Handle the error
-  //   res.status(500).json(err);
-  //   // next(err);
-  // }
-  res.render('homepage', { loggedIn: req.session.loggedIn });
+  res.render('homepage', {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
 // BUSCAR FUNCIONALIDAD!!
@@ -61,30 +31,11 @@ router.get('/city', withAuth, async (req, res) => {
 
 //Login route
 router.get('/login', (req, res) => {
-  // if (req.session.logged_in) {
-  //   res.redirect('/');
-  //   return;
-  // }
-//   // next();
-// }, 
-// (req, res) => {
   res.render('login');
 });
 
 //Signup/registration route
-router.get('/signup', (req, res, next) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-//   next();
-// }, async (req, res) => {
-//   try {
-//     res.render('signup');
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).send('Something went wrong');
-//   }
+router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
@@ -99,6 +50,29 @@ router.post('/send-signup-email', async (req, res) => {
   }
 });
 
+router.get('/addCoffeeshop', withAuth, async (req, res) => {
+  res.render('addCoffeeshop', {
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+router.get('/profile', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Feedback }],
+    });
+
+    const user = userData.get({ plain: true });
+    res.render('profile', {
+      ...user,
+      loggedIn: true
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // Error handling middleware
 router.use((err, req, res, next) => {
