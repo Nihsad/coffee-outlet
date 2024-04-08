@@ -5,7 +5,7 @@
             <h5 class="card-title">{{name}}</h5>
             <p class="card-text">{{address}}</p>
         </div>
-        <div class="card-body">
+        <div class="card-body bg-secondary">
             <a href="/api/feedbacks/addfeedback" class="card-link"><i class="fas fa-comment-dots"></i> Add Feedback</a>
             <a href="tel:{{phoneNumber}}" class="card-link"><i class="fas fa-phone-alt"></i> Call</a>
             <a href="https://www.google.com/maps/search/?api=1&query={{encodeURIComponent address}}" target="_blank"
@@ -22,23 +22,31 @@
 <div class="d-flex justify-content-center">
     <span>{{price_range}}</span>
 </div>
-    
-{{!-- <div class="coffeeshop">
-    <img class="imgCoffee" src="{{picture}}" alt="Coffeeshop Picture">
-    <h4>{{name}}</h4>
-    <p>{{address}}</p>
-    <div id="map" data-lat="{{latitude}}" data-lng="{{longitude}}" data-name="{{name}}"></div>
-    <span>{{price_range}}</span>
-</div> --}}
-{{!-- <nav class="navbar navbar-expand-xl nv bg-secondary rounded mb-2">
-    <ul class="navbar-list">
-        <li><a href="/api/feedbacks/addfeedback"><i class="fas fa-comment-dots"></i> Add Feedback</a></li>
-        <li><a href="tel:{{phoneNumber}}"><i class="fas fa-phone-alt"></i> Call</a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&query={{encodeURIComponent address}}" target="_blank"><i
-                    class="fas fa-map-marker-alt"></i> Directions</a></li>
-        <li><a href="{{website}}"><i class="fas fa-globe"></i> Website</a></li>
-    </ul>
-</nav> --}}
+
+{{#if loggedIn}}
+    <div class="card mt-3 mb-3">
+        <div class="card-header">
+            <h5>Discover what our coffee lovers are saying! 🌟</h5>
+        </div>
+        <div class="card-body">
+            {{#each Feedbacks as |feedback|}}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2>{{feedback.description}}</h2>
+                    <span class="text-muted">created on {{format_date feedback.created_on}}</span>
+                    <p>By: {{feedback.user.username}}</p>
+                    <div class="d-flex justify-content-end">
+                        <a href="/api/feedbacks/{{id}}/edit" class="btn btn-sm btn-primary mr-2">Edit</a>
+                        <form action="/api/feedbacks/{{id}}?_method=DELETE" method="POST" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
 
 
 
