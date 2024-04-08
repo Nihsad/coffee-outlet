@@ -3,7 +3,7 @@ const { User, Feedback, CoffeeShop } = require('../models');
 const { sendSignUpEmail } = require('../public/js/sendMail');
 const withAuth = require('../utils/auth');
 
-// GET all Feedbacks for homepage
+// GET homepage
 router.get('/', async (req, res) => {
   // try {
   //   const coffeeShopData = await CoffeeShop.findAll({
@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
   //   res.status(500).json(err);
   //   // next(err);
   // }
-  res.render('homepage');
+  res.render('homepage', { loggedIn: req.session.loggedIn });
 });
 
 // BUSCAR FUNCIONALIDAD!!

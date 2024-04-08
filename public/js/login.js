@@ -13,8 +13,7 @@ const loginFormHandler = async (event) => {
         });
 
     if (response.ok) {
-        // document.location.replace('/');
-        alert('Logged in successfully!');
+        document.location.replace('/');
         } else {
             alert('Failed to log in.');
         }
@@ -33,7 +32,3 @@ labels.forEach(label => {
         .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
         .join('')
 });
-
-// document
-//     .querySelector('.signup-form')
-//     .addEventListener('submit', signupFormHandler);

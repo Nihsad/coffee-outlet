@@ -2,6 +2,7 @@
     <img class="imgCoffee" src="{{picture}}" alt="Coffeeshop Picture">
     <h2>{{name}}</h2>
     <p>{{address}}</p>
+    <div id="map" data-lat="{{latitude}}" data-lng="{{longitude}}" data-name="{{name}}"></div>
     <p>Price: {{price_range}}</p>
 </div>
 <nav class="navbar nv bg-dark rounded">
@@ -12,3 +13,5 @@
         <li><a href="{{website}}"><i class="fas fa-globe"></i> Website</a></li>
     </ul>
 </nav>
+
+<script src="/js/map.js"></script>
