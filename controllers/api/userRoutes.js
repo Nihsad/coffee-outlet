@@ -36,7 +36,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 // This route is for logging in a user - endpoint: /localhost:3001/api/users/login --TESTED CHECK!
-router.post('/login', withAuth, async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ 
         where: { 
@@ -64,7 +64,6 @@ router.post('/login', withAuth, async (req, res) => {
         req.session.user_id = userData.id;
         req.session.loggedIn = true;
         
-        // res.redirect('/addCoffeeshop');
         res.json({ user: userData, message: 'You are now logged in!' });
       });
   

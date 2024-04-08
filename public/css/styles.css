@@ -22,6 +22,12 @@ body {
     overflow-y: auto;
 }
 
+/* --------- MAP ---------*/
+#map { 
+  height: 300px; 
+  width: 400px;
+}
+
 /* --------- LOGIN ---------*/
 .form-group-login {
     color: #fff;

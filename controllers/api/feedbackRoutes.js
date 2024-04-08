@@ -17,7 +17,9 @@ router.post('/addfeedback', withAuth, async (req, res) => {
 });
 
 router.get('/addfeedback', withAuth, async (req, res) => {
-   res.render('addfeedback');
+    res.render('addfeedback', {
+        loggedIn: req.session.loggedIn,
+    });
 });
 
 module.exports = router;

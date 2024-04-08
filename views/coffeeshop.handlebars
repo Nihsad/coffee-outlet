@@ -2,13 +2,16 @@
     <img class="imgCoffee" src="{{picture}}" alt="Coffeeshop Picture">
     <h2>{{name}}</h2>
     <p>{{address}}</p>
+    <div id="map" data-lat="{{latitude}}" data-lng="{{longitude}}" data-name="{{name}}"></div>
     <p>Price: {{price_range}}</p>
 </div>
 <nav class="navbar nv bg-dark rounded">
     <ul class="navbar-list">
         <li><a href="/api/feedbacks/addfeedback"><i class="fas fa-comment-dots"></i> Add Feedback</a></li>
         <li><a href="tel:{{phoneNumber}}"><i class="fas fa-phone-alt"></i> Call</a></li>
-        <li><a href="{{address}}"><i class="fas fa-map-marker-alt"></i> Directions</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query={{encodeURIComponent address}}" target="_blank"><i class="fas fa-map-marker-alt"></i> Directions</a></li>
         <li><a href="{{website}}"><i class="fas fa-globe"></i> Website</a></li>
     </ul>
 </nav>
+
+<script src="/js/map.js"></script>

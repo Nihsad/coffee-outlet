@@ -40,8 +40,24 @@ CoffeeShop.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                isIn: [['$', '$$', '$$$', "∅"]] // only allow these values
+                isIn: [['$', '$$', '$$$', '$$$$']] // only allow these values
             }
+        },
+        latitude: {
+            type: DataTypes.DECIMAL(10, 8),
+            allowNull: false
+        },
+        longitude: {
+            type: DataTypes.DECIMAL(11, 8),
+            allowNull: false
+        },
+        website: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        wifi: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         },
     },
     {
