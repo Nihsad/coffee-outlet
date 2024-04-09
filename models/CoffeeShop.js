@@ -17,7 +17,7 @@ CoffeeShop.init(
         },
         picture: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         address: {
             type: DataTypes.STRING,
@@ -45,11 +45,11 @@ CoffeeShop.init(
         },
         drinks: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            allowNull: true,
         },
         food: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true,
         },
         latitude: {
             type: DataTypes.DECIMAL(10, 8),
@@ -65,7 +65,15 @@ CoffeeShop.init(
         },
         wifi: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
         },
     },
     {
