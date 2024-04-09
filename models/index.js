@@ -8,7 +8,17 @@ User.hasMany(Feedback, {
     onDelete: 'CASCADE'
 });
 
+User.hasMany(CoffeeShop, {
+    foreignKey: 'user_id',
+    // Set to CASCADE so that when a User is deleted, all associated CoffeeShops are deleted as well
+    onDelete: 'CASCADE'
+});
+
 Feedback.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+CoffeeShop.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
