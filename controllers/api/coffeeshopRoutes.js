@@ -19,23 +19,18 @@ router.get('/city/:city', async (req, res) => {
     }
 });
 
-// This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
+// This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops/addCoffeeshop
 router.post('/addCoffeeshop', withAuth, async (req, res) => {
+    console.log(req.body);
     try {
-        const { name, picture, address, phone_number, city, price_range, latitude, longitude, website, wifi } = req.body;
-
-        // Add validation for required fields
-        if (!name || !picture || !address || !phone_number || !city || !price_range || !latitude || !longitude || !website || !wifi) {
-            res.status(400).json({ message: 'Name, picture, address, phone_number, city, price_range, latitude, longitude, website, wifi are required fields!' });
-            return;
-        }
-
+        
         const newCoffeeShop = await CoffeeShop.create({
             ...req.body,
             user_id: req.session.user_id,
         });
         res.status(200).json(newCoffeeShop);
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
