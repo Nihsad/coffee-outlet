@@ -6,21 +6,14 @@ const forms = document.querySelectorAll('.needs-validation')
 // Loop over them and prevent submission
 Array.from(forms).forEach(form => {
   form.addEventListener('submit', async event => {
+    console.log('submit form');
     if (!form.checkValidity()) {
+      console.log('Form is invalid'); // Log when the form is invalid
       event.preventDefault()
       event.stopPropagation()
+      form.classList.add('was-validated'); // Add the 'was-validated' class to show valid/invalid styles
     } else {
-      // If the form is valid, show the alert
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Thank you for your submission.',
-        text: 'Our team will review it shortly.',
-        showConfirmButton: true,
-        timer: 3000
-      });
-
-      event.preventDefault(); // Prevent the form from submitting normally
+      console.log('Form is valid'); // Log when the form is valid
       const name = document.getElementById('coffeeShopName').value.trim();
       /*const picture = document.getElementById('coffeeShopPicture');*/
       const address = document.getElementById('coffeeShopAddress').value.trim();
@@ -36,26 +29,36 @@ Array.from(forms).forEach(form => {
       const website = document.getElementById('coffeeShopWebsite').value.trim();
       const wifiElement = document.querySelector('input[name="coffeeShopWifi"]:checked');
       const wifi = wifiElement ? wifiElement.value === 'true' : false;
-      
-      if (name && address && phone_number && city && price_range && latitude && longitude && website) {
+
+      event.preventDefault(); // Prevent the default form submission
+
         const response = await fetch('/api/coffeeshops/addCoffeeshop', {
           method: 'POST',
           body: JSON.stringify({ name, address, phone_number, city, price_range, drinks, food, latitude, longitude, website, wifi }),
           headers: { 'Content-Type': 'application/json' },
         });
-        console.log(response);
-        
+        console.log("Response status:", response.status);
+        console.log('Response body:', await response.json()); // Log the body of the response
+
         if (response.ok) {
-          document.location.replace('/profile');
+          console.log('Response is OK'); // Log when the response is OK
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Thank you for your submission.',
+            text: 'Our team will review it shortly.',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+          }).then(() => {
+            document.location.replace('/profile');
+          });
         } else {
-          alert(response.statusText);
-          alert('Failed to add coffee shop.');
+          console.log('Response is not OK'); // Log when the response is not OK
+          console.log(response.statusText);
+          console.log('Failed to add coffee shop.');
+          form.reset(); // Clear the form
         }
       }
-      form.reset(); // Clear the form
-      
-    }
-
-    form.classList.add('was-validated')
-  }, false)
-})
+    }, false);
+});

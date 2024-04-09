@@ -148,24 +148,67 @@
         Please you MUST provide a description.
       </div>
     </div>
+
+
+
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="form-check-label h6" for="invalidCheck">
-          Agree to terms and conditions
-        </label>
+        <a href="#" data-toggle="modal" data-target="#termsModal">
+          <label class="form-check-label h6" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+        </a>
         <div class="invalid-feedback">
           You must agree before submitting.
         </div>
       </div>
     </div>
+
+
     <div class="col-12 mb-4 mt-4">
       <button type="submit" class="btn btn-primary">Add Coffee Shop</button>
     </div>
   </form>
 
 </div>
+<!-- Terms and Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Coffee Outlet Terms and Conditions:</h6>
+        <p>
+          <strong>Accuracy:</strong>
+          You are responsible for ensuring that the information you provide is accurate, complete, and
+          lawful.<br>
+          <strong>Data Security: </strong>
+          We'll do our best to protect your data, but we can't guarantee absolute security.<br>
+          <strong>Use of Data: </strong>
+          We may analyze and share your data for purposes like research and marketing.<br>
+          <strong>Compliance: </strong><br>
+          You must follow all relevant laws when inputting data.<br>
+          <strong>Indemnification: </strong><br>
+          You're responsible for any claims arising from your use of the database.<br>
+          <strong>Termination: </strong><br>
+          We can suspend or terminate your access at any time if we believe you've violated these
+          terms. <br>
+          <strong>Changes: </strong><br>
+          We can update these terms, and your continued use of the database means you accept the changes.<br>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-{{!-- <script src="/js/addCoffeeshop.js"></script> --}}
 <script src="/js/alert.js"></script>
