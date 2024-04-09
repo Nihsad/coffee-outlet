@@ -11,7 +11,8 @@
         "latitude": 39.6080683,
         "longitude": -105.0214201,
         "website": "https://www.arapahoe.edu/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 1
     },
     {
         "name": "Colorado Christian University, Clifton Fowler Library",
@@ -25,7 +26,8 @@
         "latitude": 39.7140309,
         "longitude": -105.0950864,
         "website": "https://www.ccu.edu/library/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 2
     },
     {
         "name": "Colorado School of Mines, Arthur Lakes Library",
@@ -39,7 +41,8 @@
         "latitude": 39.7514291,
         "longitude": -105.2260324,
         "website": "https://www.mines.edu/library/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 3
     },
     {
         "name": "Denver Public Library",
@@ -53,7 +56,8 @@
         "latitude": 39.7372618,
         "longitude": -105.1323413,
         "website": "https://www.denverlibrary.org/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 4
     },
     {
         "name": "Colorado State Library",
@@ -67,7 +71,8 @@
         "latitude": 39.7374676,
         "longitude": -105.1323414,
         "website": "https://www.cde.state.co.us/cdelib",
-        "wifi": true
+        "wifi": true,
+        "user_id": 5
     },
     {
         "name": "Front Range Community College Library",
@@ -81,7 +86,8 @@
         "latitude": 39.9011238,
         "longitude": -105.04266,
         "website": "https://www.frontrange.edu/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 6
     },
     {
         "name": "Golden Library",
@@ -95,7 +101,8 @@
         "latitude": 39.7555,
         "longitude": -105.2211,
         "website": "https://www.jeffcolibrary.org/locations/golden-library",
-        "wifi": true
+        "wifi": true,
+        "user_id": 7
     },
     {
         "name": "Lakewood Library",
@@ -109,7 +116,8 @@
         "latitude": 39.7470415,
         "longitude": -105.1493327,
         "website": "https://www.jeffcolibrary.org/locations/lakewood-library",
-        "wifi": true
+        "wifi": true,
+        "user_id": 8
     },
     {
         "name": "Parker Library",
@@ -123,7 +131,8 @@
         "latitude": 39.6042535,
         "longitude": -104.9053038,
         "website": "https://www.dcl.org/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 9
     },
     {
         "name": "Red Rocks Community College, Marvin Buckels Library",
@@ -137,7 +146,8 @@
         "latitude": 39.7257,
         "longitude": -105.1513,
         "website": "https://www.rrcc.edu/library",
-        "wifi": true
+        "wifi": true,
+        "user_id": 10
     },
     {
         "name": "Regis University, Dayton Memorial Library",
@@ -151,7 +161,8 @@
         "latitude": 39.7896,
         "longitude": -105.0311,
         "website": "https://www.regis.edu/library",
-        "wifi": true
+        "wifi": true,
+        "user_id": 11
     },
     {
         "name": "University of Colorado Strauss Health Sciences Library, Anschutz Medical Campus ",
@@ -165,7 +176,8 @@
         "latitude": 39.7427,
         "longitude": -104.8422,
         "website": "https://hslibrary.ucdenver.edu/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 12
     },
     {
         "name": "University of Denver, Anderson Academic Commons",
@@ -179,7 +191,8 @@
         "latitude": 39.6786,
         "longitude": -104.9619,
         "website": "https://library.du.edu/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 13
     },
     {
         "name": "University of Denver Law School, Westminster Law Library",
@@ -193,7 +206,8 @@
         "latitude": 39.6786,
         "longitude": -104.9619,
         "website": "https://www.law.du.edu/library",
-        "wifi": true
+        "wifi": true,
+        "user_id": 14
     },
     {
         "name": "Wheat Ridge Library",
@@ -207,7 +221,8 @@
         "latitude": 39.7625,
         "longitude": -105.0532,
         "website": "https://www.jeffcolibrary.org/locations/wheat-ridge-library",
-        "wifi": true
+        "wifi": true,
+        "user_id": 15
     },
     {
         "name": "Colorado State University, Morgan Library",
@@ -221,7 +236,8 @@
         "latitude": 40.5734,
         "longitude": -105.0865,
         "website": "https://lib.colostate.edu/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 1
     },
     {
         "name": "CU Norlin Library",
@@ -235,7 +251,8 @@
         "latitude": 40.0076,
         "longitude": -105.2659,
         "website": "https://www.colorado.edu/libraries/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 2
     },
     {
         "name": "CU Law Library, William A. Wise Law Library",
@@ -249,7 +266,8 @@
         "latitude": 40.0076,
         "longitude": -105.2659,
         "website": "https://lawlibrary.colorado.edu/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 3
     },
     {
         "name": "University of Colorado, Colorado Springs, Kraemer Family Library",
@@ -263,7 +281,8 @@
         "latitude": 38.8964,
         "longitude": -104.8003,
         "website": "https://www.uccs.edu/library/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 4
     },
     {
         "name": "Colorado College, Colorado College Tutt Library",
@@ -277,6 +296,7 @@
         "latitude": 38.8483,
         "longitude": -104.8224,
         "website": "https://www.coloradocollege.edu/library/",
-        "wifi": true
+        "wifi": true,
+        "user_id": 5
     }
 ]
