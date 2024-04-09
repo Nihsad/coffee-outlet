@@ -6,6 +6,8 @@
         "phone_number": "(303) 797-5090",
         "city": "Littleton",
         "price_range": "$$",
+        "drinks": true,
+        "food": true,
         "latitude": 39.6080683,
         "longitude": -105.0214201,
         "website": "https://www.arapahoe.edu/", 
