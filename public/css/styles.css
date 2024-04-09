@@ -40,6 +40,11 @@ body::after {
   width: 400px;
 }
 
+/* --------- Btn add newcoffeeshop ---------*/
+.button-container {
+  text-align: center;
+}
+
 /* --------- LOGIN ---------*/
 .form-group-login {
   color: #fff;
