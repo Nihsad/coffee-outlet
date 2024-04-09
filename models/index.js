@@ -32,4 +32,6 @@ Feedback.belongsTo(CoffeeShop, {
     foreignKey: 'coffee_shop_id'
 });
 
+//Testing commits
+
 module.exports = { User, CoffeeShop, Feedback };
