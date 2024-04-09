@@ -8,12 +8,15 @@ const addCoffeeShopHandler = async (event) => {
     const phone_number = document.getElementById('coffeeShopPhoneNumber').value.trim();
     const city = document.getElementById('coffeeShopCity').value;
     const price_range = document.getElementById('coffeeShopPriceRange').value;
-    const drinks = document.getElementById('coffeeShopDrinks').checked;
-    const food = document.getElementById('coffeeShopSnack').checked;
+    const drinksElement = document.querySelector('input[name="coffeeShopDrinks"]:checked');
+    const drinks = drinksElement ? drinksElement.value === 'true' : false;
+    const foodElement = document.querySelector('input[name="coffeeShopSnacks"]:checked');
+    const food = foodElement ? foodElement.value === 'true' : false;
     const latitude = document.getElementById('coffeeShopLatitude').value.trim();
     const longitude = document.getElementById('coffeeShopLongitude').value.trim();
     const website = document.getElementById('coffeeShopWebsite').value.trim();
-    const wifi = document.getElementById('coffeeShopWifi').checked;
+    const wifiElement = document.querySelector('input[name="coffeeShopWifi"]:checked');
+    const wifi = wifiElement ? wifiElement.value === 'true' : false;
 
     if (name && address && phone_number && city && price_range && latitude && longitude && website) {
         const response = await fetch('/api/coffeeshops/addCoffeeshop', {
