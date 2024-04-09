@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Feedback, CoffeeShop } = require('../models');
 const { sendSignUpEmail } = require('../public/js/sendMail');
 const withAuth = require('../utils/auth');
-
+const calculatePoints = require('../public/js/calculatePoints');
 // GET homepage
 router.get('/', async (req, res) => {
   res.render('homepage', {
@@ -66,8 +66,11 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
     console.log(user);
+
+    const points = calculatePoints(user.coffeeshops);
     res.render('profile', {
       ...user,
+      points,
       loggedIn: true
     });
   } catch (err) {
