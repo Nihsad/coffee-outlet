@@ -145,7 +145,7 @@
         "address": "3333 Regis Blvd., Denver, CO 80221",
         "phone_number": "303-458-4030",
         "city": "DENVER",
-        "price_range": "∅",
+        "price_range": "$$",
         "drinks": true,
         "food": true,
         "latitude": 39.7896,
@@ -183,7 +183,7 @@
     },
     {
         "name": "University of Denver Law School, Westminster Law Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://citadelgroup.org/wp-content/uploads/2010/02/SCI_EDU_UnivDenverCollegeofLaw_2-750x414.jpg",
         "address": "2255 E. Evans, Denver, CO 80208",
         "phone_number": "303-871-6188",
         "city": "DENVER",
@@ -197,7 +197,7 @@
     },
     {
         "name": "Wheat Ridge Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://jeffcolibrary.bibliocommons.com/events/uploads/images/full/32569dfbbc807afc603fac82ecf7e4ac/WheatRidgeExt.jpg",
         "address": "5475 W. 32nd Ave., Wheat Ridge, CO 80212",
         "phone_number": "303-235-5275",
         "city": "WHEAT RIDGE",
@@ -211,7 +211,7 @@
     },
     {
         "name": "Colorado State University, Morgan Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://www.studiotrope.com/wp-content/uploads/2015/08/Collaboratory-3-final-1500x1007.jpg",
         "address": "1201 Center Ave., Ft. Collins, Colorado 80523",
         "phone_number": "970-491-1841",
         "city": "FT. COLLINS",
@@ -225,7 +225,7 @@
     },
     {
         "name": "CU Norlin Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://www.bouldercountyarts.org/sites/default/files/venues/norlin_library.jpg",
         "address": "1720 Pleasant St., Boulder, CO  80309",
         "phone_number": "303-492-8705",
         "city": "BOULDER",
@@ -239,7 +239,7 @@
     },
     {
         "name": "CU Law Library, William A. Wise Law Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://www.colorado.edu/law/sites/default/files/styles/slider-large/public/wolflawbuildingcomposite_1.JPG",
         "address": "2450 Kittredge Loop Dr., Boulder, CO 80309",
         "phone_number": "303-492-7534",
         "city": "BOULDER",
@@ -253,7 +253,7 @@
     },
     {
         "name": "University of Colorado, Colorado Springs, Kraemer Family Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://communique.uccs.edu/wp-content/uploads/2018/03/20100804-6857-750x499.jpg",
         "address": "1420 Austin Bluffs Pkwy, Colorado Springs, CO 80918",
         "phone_number": "719-255-3295",
         "city": "CO. SPRINGS",
@@ -267,7 +267,7 @@
     },
     {
         "name": "Colorado College, Colorado College Tutt Library",
-        "picture": "https://example.com/default-coffee-image.jpg",
+        "picture": "https://images.adsttc.com/media/images/5f89/f5fe/63c0/17f7/0700/0489/newsletter/6121_N252.jpg",
         "address": "1021 N. Cascade Ave., Colorado Springs, CO 80903",
         "phone_number": "719-389-6658",
         "city": "CO. SPRINGS",
