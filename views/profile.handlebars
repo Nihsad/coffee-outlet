@@ -1,19 +1,34 @@
-<head><!-- Bootstrap links -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-</head>
-
-<section class="container container-fluid mt-5 mb-5">
-    <h2>Welcome, #USER!</h2>
-    <p class="text-primary text-center fw-bold">Don't forget to leave feedback and add your favorite cozy spots to Coffee Outlet!<br></br>
+<section class="container container-fluid mt-5 mb-5 bg-light rounded p-3">
+    <h2 class="h2 text-center text-secondary">Welcome, {{username}}</h2>
+    <p class="text-primary text-center text-dark h6">Don't forget to leave feedback and add your favorite cozy spots to
+        Coffee Outlet!❤️<br></br>
         Every piece of feedback or added spot can earn you points towards your next cuppa!</p>
 </section>
 <section class="container container-fluid mt-5 mb-5">
-    <h2>Shops You've Added(?)</h2>
+    <div class="row justify-content-center">
+        {{#each coffeeshops as |coffeeshop|}}
+        <div class=" col-md-6 my-3 d-flex align-items-stretch">
+            <div class="card p-2 border border-secondary" style="width: 32rem;">
+                <img class="imgCoffee card-img-top" src="{{coffeeshop.picture}}" alt="Coffeeshop Picture">
+                <div class="card-body">
+                    <h5 class="card-title">{{coffeeshop.name}}</h5>
+                    <p class="card-text">{{coffeeshop.address}}</p>
+                </div>
+                <div class="card-body bg-secondary">
+                    <a href="/api/feedbacks/addfeedback" class="card-link"><i class="fas fa-comment-dots"></i> Add
+                        Feedback</a>
+                    <a href="tel:{{coffeeshop.phoneNumber}}" class="card-link"><i class="fas fa-phone-alt"></i> Call</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query={{encodeURIComponent coffeeshop.address}}"
+                        target="_blank" class="card-link"><i class="fas fa-map-marker-alt"></i> Directions</a>
+                    <a href="{{coffeeshop.website}}" class="card-link"><i class="fas fa-globe"></i> Website</a>
+                </div>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
 </section>
 
-<div class="button-container mt-5 mb-5">
-    <a href="api/posts/new"><button class="btn" type="submit">+ New Post</button></a>
+<div class="button-container mt-5 mb-5 justify-content-center">
+    <a href="/addCoffeeshop"><button class="btn btn-primary" type="submit">+ New Post</button></a>
 </div>
