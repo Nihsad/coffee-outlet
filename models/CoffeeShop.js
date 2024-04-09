@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class CoffeeShop extends Model {}
+class CoffeeShop extends Model { }
 
 CoffeeShop.init(
     {
@@ -36,12 +36,20 @@ CoffeeShop.init(
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        price_range:{
+        price_range: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 isIn: [['$', '$$', '$$$', '$$$$']] // only allow these values
             }
+        },
+        drinks: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        food: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         },
         latitude: {
             type: DataTypes.DECIMAL(10, 8),
