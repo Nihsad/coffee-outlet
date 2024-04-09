@@ -2,7 +2,7 @@
     <h2 class="h2 text-center text-secondary">Welcome, {{username}}</h2>
     <p class="text-primary text-center text-dark h6">Don't forget to leave feedback and add your favorite cozy spots to
         Coffee Outlet!❤️<br></br>
-        Every piece of feedback or added spot can earn you points towards your next cuppa!</p>
+        Your points towards your next cuppa! : {{points}}</p>
 </section>
 <section class="container container-fluid mt-5 mb-5">
     <div class="row justify-content-center">
@@ -30,5 +30,13 @@
 </section>
 
 <div class="button-container mt-5 mb-5">
-    <a href="/addCoffeeshop"><button class="btn btn-primary" type="submit">+ New Post</button></a>
+    <a href="/addCoffeeshop"><button class="btn btn-primary" type="submit">+ Add CoffeeShop</button></a>
 </div>
+
+<!-- profile.handlebars -->
+<script>
+    window.coffeeshops = JSON.parse('{{{json coffeeshops}}}');
+    console.log(window.coffeeshops);
+</script>
+
+<script src="/js/calculatePoints.js"></script>

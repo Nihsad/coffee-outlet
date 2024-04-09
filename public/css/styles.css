@@ -254,7 +254,7 @@ body::after {
 
 .card-body a:hover {
   text-decoration: none !important;
-  color: #edff00;
+  color: #092b79 ;
 }
 
 .divNewCoffeeShop {
@@ -262,7 +262,7 @@ body::after {
 }
 
 .gradient-bg {
-  background: linear-gradient(to right, #092b79, #00d4ff);
+  background: linear-gradient(to left, #092b79, #00d4ff);
 }
 
 /* --------- FOOTER ---------*/
