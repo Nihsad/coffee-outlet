@@ -14,6 +14,7 @@ router.get('/city/:city', async (req, res) => {
             coffeeshops: coffeeShopPlain,
             loggedIn: req.session.loggedIn,
         });
+        console.log(coffeeShopPlain);
     } catch (err) {
         res.status(500).json(err);
     }

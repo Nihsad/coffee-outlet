@@ -14,4 +14,4 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let marker = L.marker([lat, lng]).addTo(map);
-marker.bindPopup("<b>" + nombre + "!</b>").openPopup();
+marker.bindPopup("<b>" + nombre + "</b>").openPopup();
