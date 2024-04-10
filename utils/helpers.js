@@ -8,6 +8,10 @@ module.exports = {
     // encodeURIComponent will take in a string and return a URL-encoded string
     encodeURIComponent: (text) => {
         return encodeURIComponent(text);
+    },
+
+    json: function(context) {
+        return JSON.stringify(context);
     }
 }
 

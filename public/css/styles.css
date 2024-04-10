@@ -40,6 +40,11 @@ body::after {
   width: 400px;
 }
 
+/* --------- Btn add newcoffeeshop ---------*/
+/* .button-container {
+  text-align: center;
+} */
+
 /* --------- LOGIN ---------*/
 .form-group-login {
   color: #fff;
@@ -117,28 +122,21 @@ body::after {
   transform: translateY(-30px);
 }
 
-.bg {
-  /* background: url('https://images.pexels.com/photos/5656674/pexels-photo-5656674.jpeg') no-repeat center center/cover; */
-  /* background-size: cover; */
-  /* background-position: center; */
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
 
 .bg::before {
   content: "";
-  background: url('https://images.pexels.com/photos/5656674/pexels-photo-5656674.jpeg') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
+  background: url('https://images.squarespace-cdn.com/content/5a8de2937131a592baa80d2c/1571076632647-GJ7U96T0R3F07QK2SVL9/Open-book-and-coffee-Stock-Photo.jpg?content-type=image%2Fjpeg') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
   position: absolute;
+  background-size: cover;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -1;
 
-  opacity: 0.5;
 }
+
+
 
 
 .mainh1 a:hover {
@@ -150,6 +148,8 @@ body::after {
   height: 1.5em;
   vertical-align: middle;
 }
+
+
 /* --------- Cards Homepage ---------*/
 .box {
   background-color: steelblue;
@@ -175,7 +175,7 @@ body::after {
 }
 
 .box h2 {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .box a {
@@ -188,20 +188,20 @@ body::after {
   text-decoration: none;
 }
 
-.addCoffee a {
+/* .addCoffee a {
   display: block;
   text-align: center;
-}
+} */
 
 /** --------- img coffee shops --------- */
-.imgCoffee {
+/* .imgCoffee {
   width: 200px;
   height: 300px;
-  /* border-radius: 10px;
+  border-radius: 10px;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-    margin: 5px; */
+    margin: 5px;
 
-}
+} */
 
 .coffeeshop {
   display: flex;
@@ -245,8 +245,21 @@ body::after {
   font-weight: 500;
 }
 
+.card-body a:hover {
+  text-decoration: none !important;
+  color: #092b79 ;
+}
+
 .divNewCoffeeShop {
-  background-color: rgb(206, 227, 244);
+  background: linear-gradient(to right, #82bac4, #e1e9eb);
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, #092b79, #a5e5f1);
+}
+
+.gradient-bg a:hover {
+  color: #c8b3dc;
 }
 
 /* --------- FOOTER ---------*/

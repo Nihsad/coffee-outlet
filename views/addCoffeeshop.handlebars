@@ -1,67 +1,214 @@
-<div class="col-12 bg-gradient mb-5 rounded divNewCoffeeShop">
-<form id="coffeeShopForm" class="row g-3 needs-validation" novalidate>
-  <div class="form-group col-12">
-    <h1>Add a new Coffee Shop</h1>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="coffeeShopName" class="form-label">Coffee Shop Name:</label>
-    <input class="form-control" type="text" id="coffeeShopName" placeholder="Coffee Shop Name:" required>
-    <div class="valid-feedback">
-      Looks good!
+<div class="col-12 pt-5 pl-3 pr-3 rounded divNewCoffeeShop">
+  <form class="coffeeShopForm row g-3 needs-validation mr-3 ml-3" novalidate>
+    <div class="form-group col-12 mt-2">
+      <h1 class="addCoffeeh1">Add a new Coffee Shop ☕</h1>
     </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="coffeeShopAddress" class="form-label">Coffee Shop Address:</label>
-    <input class="form-control" type="text" id="coffeeShopAddress" placeholder="Coffee Shop Address:" required>
-    <div class="valid-feedback">
-      Looks good!
+    <div class="form-group col-md-6">
+      <label for="coffeeShopName" class="form-label h6">Coffee Shop Name:</label>
+      <input class="form-control" type="text" id="coffeeShopName" placeholder="Name:" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="coffeeShopPicture" class="form-label">Picture file</label>
-    <input type="file" class="form-control-file" id="coffeeShopPicture" required>
-    <div class="valid-feedback">
-      Looks good!
+    <div class="form-group col-md-6">
+      <label for="coffeeShopAddress" class="form-label h6">Coffee Shop Address:</label>
+      <input class="form-control" type="text" id="coffeeShopAddress" placeholder="Address:" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid address.
+      </div>
     </div>
-  </div>
-  <div class="form-group col-md-6">
-    <label for="coffeeShopPriceRange" class="form-label">Price Range:</label>
-    <select class="form-select" id="coffeeShopPriceRange" required>
-      <option selected disabled value="">Choose...</option>
-      <option>$</option>
-      <option>$$</option>
-      <option>$$$</option>
-      <option>$$$$</option>
+    <div class="form-group col-md-4">
+      <label for="coffeeShopPicture" class="form-label h6">Picture file</label>
+      <input type="file" class="form-control-file" id="coffeeShopPicture" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="coffeeShopPriceRange" class="form-label h6">Price Range:</label>
+      <select class="form-select form-control" id="coffeeShopPriceRange" required>
+        <option selected disabled value="">Choose...</option>
+        <option>$</option>
+        <option>$$</option>
+        <option>$$$</option>
+        <option>$$$$</option>
+      </select>
       <div class="invalid-feedback">
         Please select a valid price range.
       </div>
-    </select>
-  </div>
-  <div class="form-group col-12">
-    <label for="coffeeShopDescription">Description</label>
-    <textarea class="form-control" id="coffeeShopDescription" rows="3" required></textarea>
-    <div class="invalid-feedback">
-        Please you MUST provide a description.
     </div>
-  </div>
-  <div class="col-12">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Agree to terms and conditions
-      </label>
+    <div class="form-group col-md-4">
+      <label for="coffeeShopCity" class="form-label h6">City:</label>
+      <select class="form-select form-control" id="coffeeShopCity" required>
+        <option selected disabled value="">Choose...</option>
+        <option>DENVER</option>
+        <option>CO. SPRINGS</option>
+        <option>FT. COLLINS</option>
+        <option>BOULDER</option>
+        <option>GOLDEN</option>
+        <option>LITTLETON</option>
+        <option>LAKEWOOD</option>
+        <option>WESTMINSTER</option>
+        <option>PARKER</option>
+        <option>WHEAT RIDGE</option>
+      </select>
       <div class="invalid-feedback">
-        You must agree before submitting.
+        Please select a valid city.
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="coffeeShopPhoneNumber" class="form-label h6">Phone Number:</label>
+      <input type="tel" class="form-control" id="coffeeShopPhoneNumber" pattern="^\d{3}-\d{3}-\d{4}$" required>
+      <div class="invalid-feedback">
+        Please type a valid phone number in the format xxx-xxx-xxxx.
+      </div>
+    </div>
+
+    <div class="form-check form-group col-md-2">
+      <label class="form-label h6">Drinks:</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="coffeeShopDrinks" id="coffeeShopDrinksYes" value="true">
+        <label class="form-check-label" for="coffeeShopDrinksYes">Yes</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="coffeeShopDrinks" id="coffeeShopDrinksNo" value="false">
+        <label class="form-check-label" for="coffeeShopDrinksNo">No</label required>
+      </div>
+    </div>
+
+    <div class="form-check form-group col-md-2">
+      <label class="form-label h6">Snacks:</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="coffeeShopSnacks" id="coffeeShopSnacksYes" value="true">
+        <label class="form-check-label" for="coffeeShopSnacksYes">Yes</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="coffeeShopSnacks" id="coffeeShopSnacksNo" value="false">
+        <label class="form-check-label" for="coffeeShopSnacksNo">No</label>
+      </div>
+    </div>
+
+    <div class="form-check form-group col-md-4">
+      <label class="form-label h6">Wi-Fi:</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="coffeeShopWifi" id="coffeeShopWifiYes" value="true">
+        <label class="form-check-label" for="coffeeShopWifiYes">Yes</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="coffeeShopWifi" id="coffeeShopWifiNo" value="false">
+        <label class="form-check-label" for="coffeeShopWifiNo">No</label>
+      </div>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="coffeeShopLatitude" class="form-label h6">Latitude:</label>
+      <input class="form-control" type="number" min="-90" max="90" step="0.000001" name="latitude"
+        id="coffeeShopLatitude" placeholder="39.6932713" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid value.
+      </div>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="coffeeShopLongitude" class="form-label h6">Longitude:</label>
+      <input class="form-control" type="number" min="-180" max="180" step="0.000001" name="longitude"
+        id="coffeeShopLongitude" placeholder="-104.8150918" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid value.
+      </div>
+    </div>
+
+
+
+    <div class="form-group col-12">
+      <label for="coffeeShopWebsite" class="form-label h6">Website:</label>
+      <input class="form-control" type="url" id="coffeeShopWebsite" placeholder="https://library.du.edu/" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Please provide a valid URL.
+      </div>
+    </div>
+    <div class="form-group col-12">
+      <label for="coffeeShopDescription" class="h6">Description</label>
+      <textarea class="form-control" id="coffeeShopDescription" rows="3"
+        placeholder="Please provide the description or details you have in mind about the coffee shop."
+        required></textarea>
+      <div class="invalid-feedback">
+        Please you MUST provide a description.
+      </div>
+    </div>
+
+
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+        <a href="#" data-toggle="modal" data-target="#termsModal">
+          <label class="form-check-label h6 text-dark" for="invalidCheck">
+            Agree to terms and conditions
+          </label>
+        </a>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 mb-4 mt-4">
+      <button type="submit" class="btn btn-primary">Add Coffee Shop</button>
+    </div>
+  </form>
+
+</div>
+<!-- Terms and Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Coffee Outlet Terms and Conditions:</h6>
+        <p>
+          <strong>Accuracy:</strong>
+          You are responsible for ensuring that the information you provide is accurate, complete, and
+          lawful.<br>
+          <strong>Data Security: </strong>
+          We'll do our best to protect your data, but we can't guarantee absolute security.<br>
+          <strong>Use of Data: </strong>
+          We may analyze and share your data for purposes like research and marketing.<br>
+          <strong>Compliance: </strong><br>
+          You must follow all relevant laws when inputting data.<br>
+          <strong>Indemnification: </strong><br>
+          You're responsible for any claims arising from your use of the database.<br>
+          <strong>Termination: </strong><br>
+          We can suspend or terminate your access at any time if we believe you've violated these
+          terms. <br>
+          <strong>Changes: </strong><br>
+          We can update these terms, and your continued use of the database means you accept the changes.<br>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-  <div class="col-12 mb-4 mt-4">
-    <button type="submit" class="btn btn-primary">Add Coffee Shop</button>
-  </div>
-</form>
-
 </div>
 
-{{!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
-
-<script src="/js/alert.js"></script>
+<script src="/js/addCoffeeshopAlert.js"></script>

@@ -14,28 +14,24 @@ router.get('/city/:city', async (req, res) => {
             coffeeshops: coffeeShopPlain,
             loggedIn: req.session.loggedIn,
         });
+        console.log(coffeeShopPlain);
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-// This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops --TESTED CHECK!
+// This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops/addCoffeeshop
 router.post('/addCoffeeshop', withAuth, async (req, res) => {
+    console.log(req.body);
     try {
-        const { name, picture, address, phone_number, city, price_range, latitude, longitude, website, wifi } = req.body;
-
-        // Add validation for required fields
-        if (!name || !picture || !address || !phone_number || !city || !price_range || !latitude || !longitude || !website || !wifi) {
-            res.status(400).json({ message: 'Name, picture, address, phone_number, city, price_range, latitude, longitude, website, wifi are required fields!' });
-            return;
-        }
-
+        
         const newCoffeeShop = await CoffeeShop.create({
             ...req.body,
             user_id: req.session.user_id,
         });
         res.status(200).json(newCoffeeShop);
     } catch (err) {
+        console.log(err);
         res.status(400).json(err);
     }
 });
@@ -85,13 +81,17 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 //get a specific coffee shop
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth,  async (req, res) => {
     try {
         const coffeeShopData = await CoffeeShop.findByPk(req.params.id, {
             include: [
                 {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
                     model: Feedback,
-                    attributes: ['description', 'created_on', 'user_id', 'coffee_shop_id'],
+                    attributes: ['id','description', 'created_on', 'user_id', 'coffee_shop_id'],
                     include: {
                         model: User,
                         attributes: ['username'],
@@ -99,19 +99,20 @@ router.get('/:id', async (req, res) => {
                 },
             ],
         });
-
+        console.log(coffeeShopData);
         if (!coffeeShopData) {
             res.status(404).json({ message: 'No coffee shop found with this id!' });
             return;
         }
         const coffeeShop = coffeeShopData.get({ plain: true });
-        console.log(coffeeShop);
+        coffeeShop.Feedbacks.forEach(feedback => {
+            
+            console.log(`Feedback ID: ${feedback.id}`);
+        });
         res.render('coffeeshop', { 
             ...coffeeShop, 
             loggedIn: req.session.loggedIn 
         });
-        console.log(coffeeShop);
-        // res.status(200).json(coffeeShopData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
