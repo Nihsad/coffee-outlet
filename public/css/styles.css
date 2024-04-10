@@ -41,9 +41,9 @@ body::after {
 }
 
 /* --------- Btn add newcoffeeshop ---------*/
-.button-container {
+/* .button-container {
   text-align: center;
-}
+} */
 
 /* --------- LOGIN ---------*/
 .form-group-login {
@@ -134,16 +134,19 @@ body::after {
 
 .bg::before {
   content: "";
-  background: url('https://images.pexels.com/photos/5656674/pexels-photo-5656674.jpeg') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
+  background: url('https://www.vailcoffee.com/cdn/shop/files/pexels-tatiana-syrikova-3932951_1024x1024.jpg?v=1619114957') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
   position: absolute;
+  background-size: cover;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: -1;
 
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
+
+
 
 
 .mainh1 a:hover {
@@ -195,10 +198,10 @@ body::after {
   text-decoration: none;
 }
 
-.addCoffee a {
+/* .addCoffee a {
   display: block;
   text-align: center;
-}
+} */
 
 /** --------- img coffee shops --------- */
 .imgCoffee {
@@ -258,11 +261,15 @@ body::after {
 }
 
 .divNewCoffeeShop {
-  background-color: rgb(206, 227, 244);
+  background: linear-gradient(to right, #82bac4, #e1e9eb);
 }
 
 .gradient-bg {
-  background: linear-gradient(to left, #092b79, #00d4ff);
+  background: linear-gradient(to right, #092b79, #a5e5f1);
+}
+
+.gradient-bg a:hover {
+  color: #c8b3dc;
 }
 
 /* --------- FOOTER ---------*/
