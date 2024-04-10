@@ -134,7 +134,7 @@ body::after {
 
 .bg::before {
   content: "";
-  background: url('https://www.vailcoffee.com/cdn/shop/files/pexels-tatiana-syrikova-3932951_1024x1024.jpg?v=1619114957') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
+  background: url('https://images.squarespace-cdn.com/content/5a8de2937131a592baa80d2c/1571076632647-GJ7U96T0R3F07QK2SVL9/Open-book-and-coffee-Stock-Photo.jpg?content-type=image%2Fjpeg') no-repeat center center/cover, rgba(0, 0, 0, 0.5);
   position: absolute;
   background-size: cover;
   top: 0;

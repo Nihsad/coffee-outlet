@@ -21,10 +21,24 @@ router.post('/:id', withAuth, async (req, res) => {
     }
 });
 
-router.get('/addfeedback', withAuth, async (req, res) => {
-    res.render('addfeedback', {
-        loggedIn: req.session.loggedIn,
-    });
+router.put('/:id/edit', withAuth, async (req, res) => {
+    try {
+        const updatedFeedback = await Feedback.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if (!updatedFeedback[0]) {
+            res.status(404).json({ message: 'No feedback found with this id!' });
+            return;
+        }
+
+        res.status(200).json(updatedFeedback);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
 });
 
 module.exports = router;
