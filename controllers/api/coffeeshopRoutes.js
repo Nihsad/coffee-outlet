@@ -81,13 +81,17 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 //get a specific coffee shop
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth,  async (req, res) => {
     try {
         const coffeeShopData = await CoffeeShop.findByPk(req.params.id, {
             include: [
                 {
+                    model: User,
+                    attributes: ['username'],
+                },
+                {
                     model: Feedback,
-                    attributes: ['description', 'created_on', 'user_id', 'coffee_shop_id'],
+                    attributes: ['id','description', 'created_on', 'user_id', 'coffee_shop_id'],
                     include: {
                         model: User,
                         attributes: ['username'],
@@ -95,19 +99,20 @@ router.get('/:id', async (req, res) => {
                 },
             ],
         });
-
+        console.log(coffeeShopData);
         if (!coffeeShopData) {
             res.status(404).json({ message: 'No coffee shop found with this id!' });
             return;
         }
         const coffeeShop = coffeeShopData.get({ plain: true });
-        console.log(coffeeShop);
+        coffeeShop.Feedbacks.forEach(feedback => {
+            
+            console.log(`Feedback ID: ${feedback.id}`);
+        });
         res.render('coffeeshop', { 
             ...coffeeShop, 
             loggedIn: req.session.loggedIn 
         });
-        console.log(coffeeShop);
-        // res.status(200).json(coffeeShopData);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

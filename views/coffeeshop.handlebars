@@ -39,7 +39,8 @@
                         <span class="text-muted">created on {{format_date feedback.created_on}}</span>
                         <p>By: {{feedback.user.username}}</p>
                         <div class="d-flex justify-content-end">
-                            <a href="/api/feedbacks/{{id}}/edit" class="btn btn-md btn-info mr-2">Edit</a>
+                            <button class="btn btn-info" onclick="location.href='/api/feedbacks/{{feedback.id}}/edit'">Edit</button>
+                            {{!-- <a href="/api/feedbacks/{{feedback.user_id}}/edit" class="btn btn-md btn-info mr-2">Edit</a> --}}
                             <form action="/api/feedbacks/{{id}}?_method=DELETE" method="POST" class="d-inline">
                                 <button type="submit" class="btn btn-md btn-danger">Delete</button>
                             </form>
