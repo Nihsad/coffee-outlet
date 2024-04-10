@@ -11,9 +11,9 @@
             {{#each coffeeshops as |coffeeshop|}}
             <div class=" col-md-6 my-1 d-flex align-items-stretch">
                 <div class="card p-2 border border-secondary" style="width: 32rem;">
-                    <img class="imgCoffee card-img-top" src="{{coffeeshop.picture}}" alt="Coffeeshop Picture">
+                    <img class=" card-img-top img-fluid" src="{{coffeeshop.picture}}" alt="Coffeeshop Picture">
                     <div class="card-body">
-                        <h5 class="card-title">{{coffeeshop.name}}</h5>
+                        <h5 class="card-title text-dark"><a href="/api/coffeeshops/{{coffeeshop.id}}"></a>{{coffeeshop.name}}</h5>
                         <p class="card-text">{{coffeeshop.address}}</p>
                     </div>
                     <div class="card-body bg-info">

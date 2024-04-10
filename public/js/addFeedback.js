@@ -5,7 +5,7 @@ const newFeedbackHandler = async (event) => {
     const coffeeshopId = form.dataset.coffeeshopId;
     const description = document.querySelector('#newFeedback').value.trim();
     
-    if (description) {
+    if (description !== '') {
         const response = await fetch(`/api/feedbacks/${coffeeshopId}`, {
             method: 'POST',
             body: JSON.stringify({ description }),
