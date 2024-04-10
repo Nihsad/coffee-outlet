@@ -15,11 +15,19 @@ router.get('/city', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const coffeeshopData = await CoffeeShop.findByPk(req.session.user_id, {
-      include: [{ model: Feedback }],
+      include: [
+        {
+          model: Feedback,
+        },
+        {
+          model: User,
+          attributes: { exclude: ['password'] },
+        }
+      ],
     });
 
     const coffeeshop = coffeeshopData.get({ plain: true });
-
+    console.log(coffeeshop);
     res.render('coffeeshop', {
       ...coffeeshop,
       loggedIn: true

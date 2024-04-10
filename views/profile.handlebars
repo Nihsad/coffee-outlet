@@ -1,39 +1,43 @@
-<section class="container container-fluid mt-5 mb-5 bg-light rounded p-3">
-    <h2 class="h2 text-center text-secondary">Welcome, {{username}}</h2>
-    <p class="text-primary text-center text-dark h6">Don't forget to leave feedback and add your favorite cozy spots to
-        Coffee Outlet!❤️<br></br>
-        Your points towards your next cuppa! : {{points}}</p>
-</section>
-<section class="container container-fluid mt-5 mb-5">
-    <div class="row justify-content-center">
-        {{#each coffeeshops as |coffeeshop|}}
-        <div class=" col-md-6 my-3 d-flex align-items-stretch">
-            <div class="card p-2 border border-secondary" style="width: 32rem;">
-                <img class="imgCoffee card-img-top" src="{{coffeeshop.picture}}" alt="Coffeeshop Picture">
-                <div class="card-body">
-                    <h5 class="card-title">{{coffeeshop.name}}</h5>
-                    <p class="card-text">{{coffeeshop.address}}</p>
+<div class="bg-secondary pt-1 pb-1">
+    <section class="container container-fluid mt-5 mb-5 bg-light rounded p-3">
+        <h2 class="h2 text-center text-info">Welcome, {{username}}</h2>
+        <p class="text-primary text-center text-dark h6">Don't forget to leave feedback and add your favorite cozy spots
+            to
+            Coffee Outlet!❤️<br></br>
+            Your points towards your next cuppa! : {{points}}</p>
+    </section>
+    <section class="container container-fluid mt-5">
+        <div class="row justify-content-center">
+            {{#each coffeeshops as |coffeeshop|}}
+            <div class=" col-md-6 my-1 d-flex align-items-stretch">
+                <div class="card p-2 border border-secondary" style="width: 32rem;">
+                    <img class=" card-img-top img-fluid" src="{{coffeeshop.picture}}" alt="Coffeeshop Picture">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark"><a href="/api/coffeeshops/{{coffeeshop.id}}"></a>{{coffeeshop.name}}</h5>
+                        <p class="card-text">{{coffeeshop.address}}</p>
+                    </div>
+                    <div class="card-body bg-info">
+                        <a href="/api/feedbacks/addfeedback" class="card-link"><i class="fas fa-comment-dots"></i> Add
+                            Feedback</a>
+                        <a href="tel:{{coffeeshop.phoneNumber}}" class="card-link"><i class="fas fa-phone-alt"></i>
+                            Call</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query={{encodeURIComponent coffeeshop.address}}"
+                            target="_blank" class="card-link"><i class="fas fa-map-marker-alt"></i> Directions</a>
+                        <a href="{{coffeeshop.website}}" class="card-link"><i class="fas fa-globe"></i> Website</a>
+                    </div>
                 </div>
-                <div class="card-body bg-secondary">
-                    <a href="/api/feedbacks/addfeedback" class="card-link"><i class="fas fa-comment-dots"></i> Add
-                        Feedback</a>
-                    <a href="tel:{{coffeeshop.phoneNumber}}" class="card-link"><i class="fas fa-phone-alt"></i> Call</a>
-                    <a href="https://www.google.com/maps/search/?api=1&query={{encodeURIComponent coffeeshop.address}}"
-                        target="_blank" class="card-link"><i class="fas fa-map-marker-alt"></i> Directions</a>
-                    <a href="{{coffeeshop.website}}" class="card-link"><i class="fas fa-globe"></i> Website</a>
-                </div>
+
             </div>
-
+            {{/each}}
         </div>
-        {{/each}}
-    </div>
-</section>
+    </section>
 
-<div class="button-container mt-5 mb-5">
-    <a href="/addCoffeeshop"><button class="btn btn-primary" type="submit">+ Add CoffeeShop</button></a>
+    <div class="d-flex justify-content-center mt-2 mb-2">
+        <a href="/addCoffeeshop"><button class="btn btn-info" type="submit">+ Add a new CoffeeShop</button></a>
+    </div>
+
 </div>
 
-<!-- profile.handlebars -->
 <script>
     window.coffeeshops = JSON.parse('{{{json coffeeshops}}}');
     console.log(window.coffeeshops);
