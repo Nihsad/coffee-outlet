@@ -3,7 +3,7 @@ const updateFormHandler = async (event) => {
 
     const description = document.querySelector('#feedbackDescription').value.trim();
     const id = document.querySelector('#feedback-id').value.trim();
-
+    const coffeeShopId = document.querySelector('#cofeeshop-id').value.trim();
     if(description) {
         const response = await fetch(`/api/feedbacks/${id}`, {
             method: 'PUT',
@@ -12,7 +12,7 @@ const updateFormHandler = async (event) => {
         });
 
         if(response.ok) {
-            document.location.replace(`/api/feedbacks/${id}`);
+            document.location.replace(`/api/coffeeshops/${coffeeShopId}`);
         } else {
             alert('Failed to update feedback');
         }
