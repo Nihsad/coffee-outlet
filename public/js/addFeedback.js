@@ -4,7 +4,7 @@ const newFeedbackHandler = async (event) => {
     const form = event.target;
     const coffeeshopId = form.dataset.coffeeshopId;
     const description = document.querySelector('#newFeedback').value.trim();
-    
+
     if (description !== '') {
         const response = await fetch(`/api/feedbacks/${coffeeshopId}`, {
             method: 'POST',
@@ -21,3 +21,7 @@ const newFeedbackHandler = async (event) => {
 };
 
 document.querySelector('.feedback-form').addEventListener('submit', newFeedbackHandler);
+
+window.onload = function () {
+    window.scrollTo(0, document.body.scrollHeight);
+};

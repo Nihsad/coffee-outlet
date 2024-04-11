@@ -1,5 +1,5 @@
 <div class="col-12 pt-5 pl-3 pr-3 rounded divNewCoffeeShop">
-  <form class="coffeeShopForm row g-3 needs-validation mr-3 ml-3" novalidate>
+  <form class="coffeeShopForm row g-3 needs-validation mr-3 ml-3" enctype="multipart/form-data" novalidate>
     <div class="form-group col-12 mt-2">
       <h1 class="addCoffeeh1">Add a new Coffee Shop ☕</h1>
     </div>
@@ -22,7 +22,7 @@
     </div>
     <div class="form-group col-md-4">
       <label for="coffeeShopPicture" class="form-label h6">Picture file</label>
-      <input type="file" class="form-control-file" id="coffeeShopPicture" required>
+      <input type="file" class="form-control-file" id="coffeeShopPicture" name="coffeeShopPicture" required>
       <div class="valid-feedback">
         Looks good!
       </div>
