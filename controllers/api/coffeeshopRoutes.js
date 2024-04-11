@@ -25,11 +25,23 @@ router.get('/city/:city', async (req, res) => {
 router.post('/addCoffeeshop', withAuth, upload.single('coffeeShopPicture'), async (req, res) => {
     console.log(req.body);
     try {
-        
+        let picture;
+        if (req.file) {
+            // If a file was uploaded, use the file path
+            picture = req.file.path.replace(/\\/g, '/');
+            if(picture.startsWith('/upload/images/upload/images/')){
+                picture = picture.replace('/upload/images/upload/images/', '/upload/images/');
+            }
+        } else if (req.body.pictureUrl) {
+            // If a URL was entered, use the URL
+            picture = req.body.pictureUrl;
+        }
+
         const newCoffeeShop = await CoffeeShop.create({
             ...req.body,
             user_id: req.session.user_id,
-            picture: req.file.path,
+            picture: picture,
+            // picture: req.file.path.replace(/\\/g, '/'),
         });
         res.status(200).json(newCoffeeShop);
     } catch (err) {
@@ -83,7 +95,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 //get a specific coffee shop
-router.get('/:id', withAuth,  async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const coffeeShopData = await CoffeeShop.findByPk(req.params.id, {
 
@@ -94,7 +106,7 @@ router.get('/:id', withAuth,  async (req, res) => {
                 },
                 {
                     model: Feedback,
-                    attributes: ['id','description', 'created_on', 'user_id', 'coffee_shop_id'],
+                    attributes: ['id', 'description', 'created_on', 'user_id', 'coffee_shop_id'],
                     include: {
                         model: User,
                         attributes: ['username'],
@@ -110,12 +122,12 @@ router.get('/:id', withAuth,  async (req, res) => {
         const coffeeShop = coffeeShopData.get({ plain: true });
         coffeeShop.picture = `/${coffeeShop.picture}`
         coffeeShop.Feedbacks.forEach(feedback => {
-            
+
             console.log(`Feedback ID: ${feedback.id}`);
         });
-        res.render('coffeeshop', { 
-            ...coffeeShop, 
-            loggedIn: req.session.loggedIn 
+        res.render('coffeeshop', {
+            ...coffeeShop,
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         console.log(err);

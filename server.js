@@ -7,6 +7,7 @@ const helpers = require('./utils/helpers');
 const dotenv = require('dotenv').config();
 // const multer = require('multer');
 const upload = require('./public/js/uploadFile.js');
+// const handlebars = require('handlebars');
 
 const sequelize = require('./config/connection');
 // This expression is requiring the connect-session-sequelize package and storing it in the SequelizeStore variable
@@ -42,6 +43,15 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+// Register Handlebars helper
+// handlebars.registerHelper('prepPictureUrl', function(picture) {
+//   if (/^https?:\/\//.test(picture)) {
+//       return picture;
+//   } else {
+//       return `/upload/images/${picture}`;
+//   }
+// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
