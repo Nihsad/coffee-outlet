@@ -17,9 +17,9 @@ module.exports = {
     prepPictureUrl: function (picture) {
         console.log(`PICTURE: '${picture}'`);
         picture = picture.replace(/\\/g, '/');
-        if (picture.startsWith('/')) {
-            picture = picture.slice(1);
-        }
+        // if (picture.startsWith('/')) {
+        //     picture = picture.slice(1);
+        // }
         if (/^https?:\/\//.test(picture)) {
             console.log(`PICTURE AFTER: '${picture}'`);
             return picture;
