@@ -1,4 +1,5 @@
 /* --------- NAVBAR ---------*/
+
 .navbar a {
   color: #fff;
   text-decoration: none;
@@ -29,7 +30,6 @@ body {
 body::after {
   content: '';
   display: block;
-  height: 50px;
   /*Set same as footer's height */
 }
 
@@ -240,7 +240,7 @@ body::after {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100% !important;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .card-body a {
@@ -278,14 +278,13 @@ footer {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   position: absolute;
-  /* bottom: 0; */
+  bottom: 0px;
   width: 100%;
   /* height: 50px; */
   /* height: 2.5rem;  */
   /* background-color: #753742 !important; */
   /* padding: 10px; */
   color: #fff;
-  /* bottom: 0; */
 }
 
 /* format for the h3 inside the footer*/
@@ -294,7 +293,6 @@ footer h3 {
 }
 
 /* login/logout button styling */
-
 #logout,
 #login {
   position: absolute;
