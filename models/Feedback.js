@@ -40,7 +40,7 @@ Feedback.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Feedback'
+        modelName: 'feedback'
     }
 
 );
