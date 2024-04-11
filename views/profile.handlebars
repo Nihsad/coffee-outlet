@@ -13,11 +13,11 @@
                 <div class="card p-2 border border-secondary" style="width: 32rem;">
                     <img class=" card-img-top img-fluid" src="{{coffeeshop.picture}}" alt="Coffeeshop Picture">
                     <div class="card-body">
-                        <h5 class="card-title text-dark"><a href="/api/coffeeshops/{{coffeeshop.id}}"></a>{{coffeeshop.name}}</h5>
+                        <a href="/api/coffeeshops/{{coffeeshop.id}}"><h5 class="card-title text-dark">{{coffeeshop.name}}</h5></a>
                         <p class="card-text">{{coffeeshop.address}}</p>
                     </div>
                     <div class="card-body bg-info">
-                        <a href="/api/feedbacks/addfeedback" class="card-link"><i class="fas fa-comment-dots"></i> Add
+                        <a href="/api/coffeeshops/{{coffeeshop.id}}" class="card-link"><i class="fas fa-comment-dots"></i> Add
                             Feedback</a>
                         <a href="tel:{{coffeeshop.phoneNumber}}" class="card-link"><i class="fas fa-phone-alt"></i>
                             Call</a>
