@@ -114,17 +114,18 @@ router.get('/:id', withAuth, async (req, res) => {
                 },
             ],
         });
-        console.log(coffeeShopData);
+        console.log("CoffeeShop data: ",coffeeShopData);
         if (!coffeeShopData) {
             res.status(404).json({ message: 'No coffee shop found with this id!' });
             return;
         }
         const coffeeShop = coffeeShopData.get({ plain: true });
-        coffeeShop.picture = `/${coffeeShop.picture}`
-        coffeeShop.Feedbacks.forEach(feedback => {
+        console.log(coffeeShop);
+        // coffeeShop.picture = `/${coffeeShop.picture}`
+        // coffeeShop.Feedbacks.forEach(feedback => {
 
-            console.log(`Feedback ID: ${feedback.id}`);
-        });
+        //     console.log(`Feedback ID: ${feedback.id}`);
+        // });
         res.render('coffeeshop', {
             ...coffeeShop,
             loggedIn: req.session.loggedIn
