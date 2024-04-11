@@ -78,4 +78,18 @@ router.put('/:id', withAuth, async (req, res) => {
         res.status(500).json(error);
     }
 });
+
+router.delete('/:id', withAuth, async (req, res) => {
+    console.log("DELETE FEEDBACK ROUTE!");
+    try {
+        const affectedRows = await Feedback.destroy({
+            where: {
+                id: req.params.id,
+            },
+        });
+        res.status(200).end();
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 module.exports = router;
