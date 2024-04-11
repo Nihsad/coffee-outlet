@@ -15,7 +15,8 @@ Array.from(forms).forEach(form => {
     } else {
       console.log('Form is valid'); // Log when the form is valid
       const name = document.getElementById('coffeeShopName').value.trim();
-      /*const picture = document.getElementById('coffeeShopPicture');*/
+      const picture = document.getElementById('coffeeShopPicture');
+      console.log(picture.files[0]); // This will log the selected file to the console
       const address = document.getElementById('coffeeShopAddress').value.trim();
       const phone_number = document.getElementById('coffeeShopPhoneNumber').value.trim();
       const city = document.getElementById('coffeeShopCity').value;
@@ -32,10 +33,24 @@ Array.from(forms).forEach(form => {
 
       event.preventDefault(); // Prevent the default form submission
 
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('coffeeShopPicture', picture.files[0]);
+      formData.append('address', address);
+      formData.append('phone_number', phone_number);
+      formData.append('city', city);
+      formData.append('price_range', price_range);
+      formData.append('drinks', drinks);
+      formData.append('food', food);
+      formData.append('latitude', latitude);
+      formData.append('longitude', longitude);
+      formData.append('website', website);
+      formData.append('wifi', wifi);
+      
         const response = await fetch('/api/coffeeshops/addCoffeeshop', {
           method: 'POST',
-          body: JSON.stringify({ name, address, phone_number, city, price_range, drinks, food, latitude, longitude, website, wifi }),
-          headers: { 'Content-Type': 'application/json' },
+          body: formData,
+          // headers: { 'Content-Type': 'application/json' },
         });
         console.log("Response status:", response.status);
         console.log('Response body:', await response.json()); // Log the body of the response

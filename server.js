@@ -2,9 +2,11 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const router = require('./controllers');
 const helpers = require('./utils/helpers');
 const dotenv = require('dotenv').config();
+// const multer = require('multer');
+const upload = require('./public/js/uploadFile.js');
 
 const sequelize = require('./config/connection');
 // This expression is requiring the connect-session-sequelize package and storing it in the SequelizeStore variable
@@ -15,6 +17,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
+
+// app.use(upload);
 
 // This object is creating a session for the user to store their information
 const sess = {
@@ -43,8 +47,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'assets')));
+app.use('/upload', express.static(path.join(__dirname, 'upload')));
 
-app.use(routes);
+app.use(router);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { CoffeeShop, Feedback, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const upload = require('../../public/js/uploadFile.js');
 
 router.get('/city/:city', async (req, res) => {
     try {
@@ -21,18 +22,19 @@ router.get('/city/:city', async (req, res) => {
 });
 
 // This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops/addCoffeeshop
-router.post('/addCoffeeshop', withAuth, async (req, res) => {
+router.post('/addCoffeeshop', upload.single('coffeeShopPicture'), async (req, res) => {
     console.log(req.body);
     try {
         
         const newCoffeeShop = await CoffeeShop.create({
             ...req.body,
             user_id: req.session.user_id,
+            picture: req.file.path,
         });
         res.status(200).json(newCoffeeShop);
     } catch (err) {
         console.log(err);
-        res.status(400).json(err);
+        res.status(500).json(err);
     }
 });
 

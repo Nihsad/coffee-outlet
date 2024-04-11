@@ -3,6 +3,7 @@ const { User, Feedback, CoffeeShop } = require('../models');
 const { sendSignUpEmail } = require('../public/js/sendMail');
 const withAuth = require('../utils/auth');
 const calculatePoints = require('../public/js/calculatePoints');
+
 // GET homepage
 router.get('/', async (req, res) => {
   res.render('homepage', {
@@ -91,5 +92,6 @@ router.use((err, req, res, next) => {
   console.log(err);
   res.status(500).send('Something went wrong');
 });
+
 
 module.exports = router;
