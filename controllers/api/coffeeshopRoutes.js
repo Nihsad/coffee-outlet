@@ -22,7 +22,7 @@ router.get('/city/:city', async (req, res) => {
 });
 
 // This route is for creating a new coffee shop - endpoint: /localhost:3001/api/coffeeshops/addCoffeeshop
-router.post('/addCoffeeshop', upload.single('coffeeShopPicture'), async (req, res) => {
+router.post('/addCoffeeshop', withAuth, upload.single('coffeeShopPicture'), async (req, res) => {
     console.log(req.body);
     try {
         
@@ -86,6 +86,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.get('/:id', withAuth,  async (req, res) => {
     try {
         const coffeeShopData = await CoffeeShop.findByPk(req.params.id, {
+
             include: [
                 {
                     model: User,
@@ -107,6 +108,7 @@ router.get('/:id', withAuth,  async (req, res) => {
             return;
         }
         const coffeeShop = coffeeShopData.get({ plain: true });
+        coffeeShop.picture = `/${coffeeShop.picture}`
         coffeeShop.Feedbacks.forEach(feedback => {
             
             console.log(`Feedback ID: ${feedback.id}`);
