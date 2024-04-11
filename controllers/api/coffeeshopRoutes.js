@@ -114,7 +114,7 @@ router.get('/:id', withAuth, async (req, res) => {
                 },
             ],
         });
-        console.log("CoffeeShop data: ",coffeeShopData);
+        console.log("CoffeeShop data HERE: ",coffeeShopData);
         if (!coffeeShopData) {
             res.status(404).json({ message: 'No coffee shop found with this id!' });
             return;
