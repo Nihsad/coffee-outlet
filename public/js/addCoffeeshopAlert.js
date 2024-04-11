@@ -20,6 +20,7 @@ Array.from(forms).forEach(form => {
       const address = document.getElementById('coffeeShopAddress').value.trim();
       const phone_number = document.getElementById('coffeeShopPhoneNumber').value.trim();
       const city = document.getElementById('coffeeShopCity').value;
+      const rating = document.getElementById('coffeeShopRating').value;
       const price_range = document.getElementById('coffeeShopPriceRange').value;
       const drinksElement = document.querySelector('input[name="coffeeShopDrinks"]:checked');
       const drinks = drinksElement ? drinksElement.value === 'true' : false;
@@ -39,6 +40,7 @@ Array.from(forms).forEach(form => {
       formData.append('address', address);
       formData.append('phone_number', phone_number);
       formData.append('city', city);
+      formData.append('rating', rating);
       formData.append('price_range', price_range);
       formData.append('drinks', drinks);
       formData.append('food', food);
