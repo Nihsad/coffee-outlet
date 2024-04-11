@@ -66,23 +66,28 @@ router.get('/addCoffeeshop', withAuth, async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
+  console.log("PROFILE ROUTE");
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Feedback }, { model: CoffeeShop }],
     });
+    console.log(req.session.user_id)
+    console.log( "THIS IS THE DATA ",userData);
 
     const user = userData.get({ plain: true });
-    console.log(user);
+    console.log("THIS IS THE USER",user);
 
     const points = calculatePoints(user.coffeeshops);
+    console.log(points);
     res.render('profile', {
       ...user,
       points,
       loggedIn: true
     });
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
