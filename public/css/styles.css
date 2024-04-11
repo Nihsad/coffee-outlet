@@ -1,5 +1,4 @@
 /* --------- NAVBAR ---------*/
-
 .navbar a {
   color: #fff;
   text-decoration: none;
@@ -149,6 +148,10 @@ body::after {
   vertical-align: middle;
 }
 
+.mainh1 a {
+  color: steelblue !important;
+}
+
 
 /* --------- Cards Homepage ---------*/
 .box {
@@ -162,12 +165,12 @@ body::after {
   margin: 10px;
   border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-  transform: translateX(400%);
+  transform: translateX(600%);
   transition: transform 0.4s ease;
 }
 
 .box:nth-of-type(even) {
-  transform: translateX(-400%);
+  transform: translateX(-600%);
 }
 
 .box.show {
@@ -288,4 +291,14 @@ footer {
 /* format for the h3 inside the footer*/
 footer h3 {
   font-size: 20px;
+}
+
+/* login/logout button styling */
+
+#logout,
+#login {
+  position: absolute;
+  background-color: steelblue;
+  border-color: steelblue;
+  right: 20px;
 }

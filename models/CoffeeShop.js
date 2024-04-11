@@ -67,6 +67,10 @@ CoffeeShop.init(
             type: DataTypes.BOOLEAN,
             allowNull: true,
         },
+        rating: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

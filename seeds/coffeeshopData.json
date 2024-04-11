@@ -12,6 +12,7 @@
         "longitude": -105.0214201,
         "website": "https://www.arapahoe.edu/",
         "wifi": true,
+        "rating": "★",
         "user_id": 1
     },
     {
@@ -27,6 +28,7 @@
         "longitude": -105.0950864,
         "website": "https://www.ccu.edu/library/",
         "wifi": true,
+        "rating": "★★",
         "user_id": 2
     },
     {
@@ -42,6 +44,7 @@
         "longitude": -105.2260324,
         "website": "https://www.mines.edu/library/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 3
     },
     {
@@ -57,6 +60,7 @@
         "longitude": -105.1323413,
         "website": "https://www.denverlibrary.org/",
         "wifi": true,
+        "rating": "★★★★",
         "user_id": 4
     },
     {
@@ -72,6 +76,7 @@
         "longitude": -105.1323414,
         "website": "https://www.cde.state.co.us/cdelib",
         "wifi": true,
+        "rating": "★★★★★",
         "user_id": 5
     },
     {
@@ -87,6 +92,7 @@
         "longitude": -105.04266,
         "website": "https://www.frontrange.edu/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 6
     },
     {
@@ -102,6 +108,7 @@
         "longitude": -105.2211,
         "website": "https://www.jeffcolibrary.org/locations/golden-library",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 7
     },
     {
@@ -117,6 +124,7 @@
         "longitude": -105.1493327,
         "website": "https://www.jeffcolibrary.org/locations/lakewood-library",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 8
     },
     {
@@ -132,6 +140,7 @@
         "longitude": -104.9053038,
         "website": "https://www.dcl.org/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 9
     },
     {
@@ -147,6 +156,7 @@
         "longitude": -105.1513,
         "website": "https://www.rrcc.edu/library",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 10
     },
     {
@@ -162,6 +172,7 @@
         "longitude": -105.0311,
         "website": "https://www.regis.edu/library",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 11
     },
     {
@@ -177,6 +188,7 @@
         "longitude": -104.8422,
         "website": "https://hslibrary.ucdenver.edu/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 12
     },
     {
@@ -192,6 +204,7 @@
         "longitude": -104.9619,
         "website": "https://library.du.edu/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 13
     },
     {
@@ -207,6 +220,7 @@
         "longitude": -104.9619,
         "website": "https://www.law.du.edu/library",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 14
     },
     {
@@ -222,6 +236,7 @@
         "longitude": -105.0532,
         "website": "https://www.jeffcolibrary.org/locations/wheat-ridge-library",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 15
     },
     {
@@ -237,6 +252,7 @@
         "longitude": -105.0865,
         "website": "https://lib.colostate.edu/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 1
     },
     {
@@ -252,6 +268,7 @@
         "longitude": -105.2659,
         "website": "https://www.colorado.edu/libraries/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 2
     },
     {
@@ -267,6 +284,7 @@
         "longitude": -105.2659,
         "website": "https://lawlibrary.colorado.edu/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 3
     },
     {
@@ -282,6 +300,7 @@
         "longitude": -104.8003,
         "website": "https://www.uccs.edu/library/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 4
     },
     {
@@ -297,6 +316,7 @@
         "longitude": -104.8224,
         "website": "https://www.coloradocollege.edu/library/",
         "wifi": true,
+        "rating": "★★★",
         "user_id": 5
     }
 ]
