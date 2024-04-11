@@ -17,6 +17,9 @@ Array.from(forms).forEach(form => {
       const name = document.getElementById('coffeeShopName').value.trim();
       const picture = document.getElementById('coffeeShopPicture');
       console.log(picture.files[0]); // This will log the selected file to the console
+      console.log('File name:', picture.files[0].name);
+      console.log('File size:', picture.files[0].size);
+      console.log('File type:', picture.files[0].type);
       const address = document.getElementById('coffeeShopAddress').value.trim();
       const phone_number = document.getElementById('coffeeShopPhoneNumber').value.trim();
       const city = document.getElementById('coffeeShopCity').value;
@@ -48,34 +51,34 @@ Array.from(forms).forEach(form => {
       formData.append('longitude', longitude);
       formData.append('website', website);
       formData.append('wifi', wifi);
-      
-        const response = await fetch('/api/coffeeshops/addCoffeeshop', {
-          method: 'POST',
-          body: formData,
-          // headers: { 'Content-Type': 'application/json' },
-        });
-        console.log("Response status:", response.status);
-        console.log('Response body:', await response.json()); // Log the body of the response
 
-        if (response.ok) {
-          console.log('Response is OK'); // Log when the response is OK
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Thank you for your submission.',
-            text: 'Our team will review it shortly.',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-          }).then(() => {
-            document.location.replace('/profile');
-          });
-        } else {
-          console.log('Response is not OK'); // Log when the response is not OK
-          console.log(response.statusText);
-          console.log('Failed to add coffee shop.');
-          form.reset(); // Clear the form
-        }
+      const response = await fetch('/api/coffeeshops/addCoffeeshop', {
+        method: 'POST',
+        body: formData,
+        // headers: { 'Content-Type': 'application/json' },
+      });
+      console.log("Response status:", response.status);
+      console.log('Response body:', await response.json()); // Log the body of the response
+
+      if (response.ok) {
+        console.log('Response is OK'); // Log when the response is OK
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Thank you for your submission.',
+          text: 'Our team will review it shortly.',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+        }).then(() => {
+          document.location.replace('/profile');
+        });
+      } else {
+        console.log('Response is not OK'); // Log when the response is not OK
+        console.log(response.statusText);
+        console.log('Failed to add coffee shop.');
+        form.reset(); // Clear the form
       }
-    }, false);
+    }
+  }, false);
 });
