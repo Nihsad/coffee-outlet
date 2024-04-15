@@ -1,6 +1,12 @@
 # ☕coffee-outlet
 This is a Full Stack Application.
 
+## App appearance
+![Website-appearance](/assets/homepage.png)
+![Website-appearance](/assets/coffeeshop.png)
+![Website-appearance](/assets/info.png)
+![Website-appearance](/assets/map.png)
+
 ## Description
 This project, titled "Coffee Outlet", is an interactive web application designed for coffee enthusiasts. It operates on the Model-View-Controller (MVC) architectural pattern and provides a platform for users to share their experiences by posting about new coffee shops. Users can also provide feedback on coffee shops added by themselves or others, fostering a community of shared insights and experiences.
 
@@ -20,6 +26,7 @@ Application deployed using Render:
 
 ## Table of Contents
 - [☕coffee-outlet](#coffee-outlet)
+  - [App appearance](#app-appearance)
   - [Description](#description)
   - [Database-Appearance](#database-appearance)
   - [Table of Contents](#table-of-contents)
