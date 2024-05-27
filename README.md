@@ -97,7 +97,7 @@ This project was built using the following technologies:
 - [Handlebars.js](https://handlebarsjs.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Render](https://render.com/)
-- [Bootstrap](https://getbootstrap.com/)
+- [Bulma](https://bulma.io/)
 - [Nodemon](https://nodemon.io/)
 - [Sequelize](https://sequelize.org/)
 - [Multer](https://www.npmjs.com/package/multer)
