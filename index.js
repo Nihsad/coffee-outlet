@@ -15,7 +15,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
 const hbs = exphbs.create({ helpers });
 
@@ -43,15 +43,6 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-// Register Handlebars helper
-// handlebars.registerHelper('prepPictureUrl', function(picture) {
-//   if (/^https?:\/\//.test(picture)) {
-//       return picture;
-//   } else {
-//       return `/upload/images/${picture}`;
-//   }
-// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
