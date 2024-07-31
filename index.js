@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const router = require('./controllers');
 const helpers = require('./utils/helpers');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 // const multer = require('multer');
 const upload = require('./public/js/uploadFile.js');
 // const handlebars = require('handlebars');
