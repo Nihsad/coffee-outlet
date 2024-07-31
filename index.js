@@ -64,3 +64,6 @@ app.use(router);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
+
+// Export the app for Vercel
+module.exports = app;
