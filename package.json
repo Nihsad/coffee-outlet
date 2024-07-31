@@ -2,13 +2,13 @@
   "name": "coffee_db",
   "version": "1.0.0",
   "description": "A coffee shop database",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node index.js",
     "start": "node index.js",
     "seed": "node seeds/seed.js",
-    "nodemon": "nodemon server.js"
+    "nodemon": "nodemon index.js"
   },
   "keywords": [],
   "author": "Team 2",
